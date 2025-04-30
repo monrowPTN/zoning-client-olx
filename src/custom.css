@@ -1,0 +1,236 @@
+html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', comic-sans-serif, sans-serif;
+    background: hsl(101, 20%, 84%); /* ✅ Light green you have now */
+    height: 100vh;
+    width: 100%;
+    display: flex;
+  }
+
+  .title {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #006241;
+    margin-bottom: 10px;
+    white-space: nowrap; /* ✅ Prevents "New Zoning Lead" from breaking into two lines */
+  }
+  
+  body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(243, 240, 240, 0.1) 0%, transparent 70%);
+    transform: translateY(-30%);
+    animation: parallaxMove 20s infinite linear alternate;
+    z-index: 0;
+    pointer-events: none; /* ✅ Very important (avoid blocking form clicks) */
+
+  }
+
+  .page-layout {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    position: relative; /* ✅ Add this */
+    z-index: 2; /* ✅ Add this */
+  }
+
+  .left-side {
+    padding-left: 150px;
+    padding-right: 50px;
+    width: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 50px;
+    position: relative;
+    z-index: 2;
+  }
+
+.right-side {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 400px; /* push map to the right */
+  position: relative;
+  overflow: hidden;
+  z-index: 2; /* ✅ Ensure it's above body::before */
+}
+
+.map-wrapper {
+  position: relative;
+  display: inline-block;
+  width: auto;
+  max-width: 100%;
+}
+
+.map-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.input {
+  width: 100%;
+  max-width: 320px;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 20px;
+  background: #E8F8D8;
+  border: 1px solid #ccc;
+  color: #333;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+.input:focus {
+  background: white;
+  border: 2px solid #00b5ad;
+  outline: none;
+}
+  
+  @keyframes parallaxMove {
+    0% { transform: translateY(-30%); }
+    100% { transform: translateY(-10%); }
+  }
+  
+  nav {
+    background: white;
+    padding: 15px 30px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  nav .logo-nav {
+    display: flex;
+    align-items: center;
+  }
+  
+  nav img {
+    height: 40px;
+    margin-right: 10px;
+  }
+  
+  nav span {
+    font-weight: 800;
+    font-size: 1.2rem;
+    color: #00b5ad;
+  }
+  
+  .main-content {
+    margin-top: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .card {
+    background: #D0F3C5;
+    padding: 70px 50px;
+    border-radius: 30px;
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    box-shadow: none;
+    position: relative;
+    z-index: 2;
+    animation: fadeInCard 1.2s ease forwards; /* 👈 Add this line */
+    opacity: 0; /* 👈 Add this line */
+  }
+  
+  @keyframes fadeInCard {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .logo {
+    width: 80px;
+    margin-bottom: 20px;
+  }
+  
+  h1 {
+    font-size: 2rem;
+    color: #00b5ad;
+    margin-bottom: 10px;
+  }
+  
+  p {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 30px;
+    line-height: 1.6;
+  }
+  
+  .submit-btn {
+    background: linear-gradient(90deg, hsl(177, 53%, 60%), hsl(92, 74%, 82%));
+    padding: 16px 32px;
+    border-radius: 30px;
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+
+  .btn {
+    background: linear-gradient(to right, #48c6ef, #6f86d6); /* Calm OLX blue */
+    color: white;
+    padding: 16px 32px;
+    border-radius: 50px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+  }
+  
+  .btn:hover {
+    transform: scale(1.05);
+    background: linear-gradient(to right, #43cea2, #185a9d);
+    box-shadow: 0 8px 20px rgba(0, 181, 173, 0.4); /* <--- NEW glow effect */
+  }
+  
+  .btn::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255,255,255,0.5);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .btn:hover::after {
+    width: 0.5%;
+    height: 0.5%;
+  }
+  
+  .btn:hover {
+    background: linear-gradient(to right, #43cea2, #185a9d);
+  }
+
+  
