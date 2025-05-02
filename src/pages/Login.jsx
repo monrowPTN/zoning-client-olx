@@ -3,13 +3,14 @@ import React, { useState } from 'react';
 
 const Login = ({ onLoginSuccess }) => {
   const [showMessage, setShowMessage] = useState(false);
+  const [userIdentifier, setUserIdentifier] = useState(''); // ✅ New state
 
   const handleLogin = (e) => {
     e.preventDefault();
     setShowMessage(true);
 
-    // Simulate login success
     setTimeout(() => {
+      localStorage.setItem('driverID', userIdentifier); // ✅ Store driver email or phone
       if (onLoginSuccess) {
         onLoginSuccess();
       }
@@ -36,9 +37,11 @@ const Login = ({ onLoginSuccess }) => {
             type="text" 
             placeholder="Driver Email or Phone Number" 
             className="input validate"
-            pattern="(^\d{8}$)|(^[a-zA-Z0-9._%+-]+@dubizzle.com.lb$)"
+            pattern="(^\\d{8}$)|(^[a-zA-Z0-9._%+-]+@dubizzle.com.lb$)"
             title="Enter a valid 8-digit phone number or an email ending with @dubizzle.com.lb"
             required
+            value={userIdentifier}
+            onChange={(e) => setUserIdentifier(e.target.value)} // ✅ Add this
           />
           <input
             type="password"

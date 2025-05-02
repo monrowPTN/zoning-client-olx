@@ -1,3 +1,4 @@
+import 'leaflet/dist/leaflet.css';
 import './landing.css';
 import './custom.css';
 import { StrictMode } from 'react'
