@@ -20,7 +20,7 @@ const Login = ({ onLoginSuccess }) => {
 
   return (
     <div className="login-page">
-      
+
       {/* ✅ OLX Logo Header */}
       <div className="header">
         <img src="/olx-logo.png" alt="OLX Logo" className="header-logo" />
@@ -28,12 +28,6 @@ const Login = ({ onLoginSuccess }) => {
 
       {/* ✅ Login Card */}
       <div className="login-card">
-        
-        {/* ✅ OLX Logo Inside Card */}
-        <div className="logo-wrapper">
-          <img src="/olx-logo.png" alt="OLX Logo" className="logo" />
-        </div>
-
         <h1 className="title">Zoning Lead</h1>
         <p className="subtitle">Sign-in</p>
 
@@ -42,7 +36,7 @@ const Login = ({ onLoginSuccess }) => {
             type="text" 
             placeholder="Driver Email or Phone Number" 
             className="input validate"
-            pattern="(^\\d{8}$)|(^[a-zA-Z0-9._%+-]+@dubizzle\\.com\\.lb$)"
+            pattern="(^\d{8}$)|(^[a-zA-Z0-9._%+-]+@dubizzle.com.lb$)"
             title="Enter a valid 8-digit phone number or an email ending with @dubizzle.com.lb"
             required
           />
@@ -60,9 +54,8 @@ const Login = ({ onLoginSuccess }) => {
             Drive Safe! 🚦
           </div>
         )}
-        
       </div>
-
+      
     </div>
   );
 };

@@ -80,8 +80,8 @@ html {
 }
 
 .input {
-  width: 100%;
-  max-width: 320px;
+  width: 90%;
+  max-width: 288px;
   padding: 10px;
   margin-bottom: 15px;
   border-radius: 20px;
@@ -194,23 +194,50 @@ html {
     font-weight: bold;
   }
 
-  .btn {
-    background: linear-gradient(to right, #48c6ef, #6f86d6); /* Calm OLX blue */
-    color: white;
-    padding: 16px 32px;
-    border-radius: 50px;
-    font-size: 1.2rem;
-    font-weight: bold;
-    border: none;
-    cursor: pointer;
-    transition: background 0.3s ease, transform 0.3s ease;
-  }
-  
-  .btn:hover {
-    transform: scale(1.05);
-    background: linear-gradient(to right, #43cea2, #185a9d);
-    box-shadow: 0 8px 20px rgba(0, 181, 173, 0.4); /* <--- NEW glow effect */
-  }
+  .btn,
+.btn-login,
+.logout-btn {
+  width: 90%;
+  max-width: 288px;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  background: linear-gradient(to right, #48c6ef, #6f86d6);
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+  box-sizing: border-box;
+}
+
+.btn:hover,
+.btn-login:hover,
+.logout-btn:hover {
+  transform: scale(1.03);
+  background: linear-gradient(to right, #43cea2, #185a9d);
+  box-shadow: 0 8px 20px rgba(0, 181, 173, 0.4);
+}
+
+select.input {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-color: #E8F8D8;
+  background-image: url("data:image/svg+xml,%3Csvg fill='black' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.516 7.548L10 12.032l4.484-4.484L15.9 8.966l-5.9 5.9-5.9-5.9z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 1rem;
+  padding-right: 2.5rem;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  font-size: 1rem;
+  color: #333;
+  width: 90%;
+  max-width: 288px;
+  margin-bottom: 15px;
+}
   
   .btn::after {
     content: "";

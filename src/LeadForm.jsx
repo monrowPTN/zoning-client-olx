@@ -1,7 +1,8 @@
+import supabase from './supabaseClient';
 import React, { useState } from 'react';
 import './custom.css';
 
-const LeadForm = () => {
+const LeadForm = ({ onLogout }) => {
   const [shopName, setShopName] = useState('');
   const [phone, setPhone] = useState('');
   const [address, setAddress] = useState('');
@@ -34,34 +35,44 @@ const LeadForm = () => {
     );
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-  
-    const leadData = {
-      shopName,
-      phone,
-      address,
-      zone,
-      latitude,
-      longitude,
-    };
-  
-    console.log('🚀 Lead Submitted:', leadData);
-  
-    setSuccessMessage('✅ Lead submitted successfully!');
-  
-    // Auto-disappear after 2 seconds
-    setTimeout(() => {
-      setSuccessMessage('');
-    }, 1000);
-  
-    // Reset fields
-    setShopName('');
-    setPhone('');
-    setAddress('');
-    setZone('');
-    setLatitude('');
-    setLongitude('');
+
+    try {
+      const { data, error } = await supabase.from('leads').insert([
+        {
+          shop_name: shopName,
+          phone: phone,
+          address: address,
+          zone: zone,
+          latitude: latitude,
+          longitude: longitude,
+        },
+      ]);
+
+      if (error) {
+        console.error('❌ Supabase error:', error.message);
+        setError('❌ Failed to submit lead. Please try again.');
+        return;
+      }
+
+      console.log('✅ Lead submitted:', data);
+      setSuccessMessage('Lead Submitted Successfully ✅');
+
+      // Clear form after 3s
+      setTimeout(() => {
+        setSuccessMessage('');
+        setShopName('');
+        setPhone('');
+        setAddress('');
+        setZone('');
+        setLatitude('');
+        setLongitude('');
+      }, 3000);
+    } catch (err) {
+      console.error('❌ Unexpected error:', err);
+      setError('❌ Something went wrong.');
+    }
   };
 
   return (
@@ -71,6 +82,18 @@ const LeadForm = () => {
         <div className="card">
           <img src="/olx-logo.png" alt="OLX Logo" className="logo" />
           <h1 className="title">New Zoning Lead</h1>
+
+          {/* ✅ Logout Button */}
+          <button
+            onClick={() => {
+              localStorage.removeItem('loggedIn');
+              if (onLogout) onLogout();
+            }}
+            className="btn"
+            style={{ marginBottom: '20px', background: '#ff4d4f' }}
+          >
+            Logout
+          </button>
 
           <form className="form" onSubmit={handleSubmit}>
             <input
@@ -224,28 +247,29 @@ const LeadForm = () => {
             </select>
 
             <button
-  type="button"
-  onClick={handlePinLocation}
-  className="btn"
-  disabled={loadingLocation}
->
-  {loadingLocation ? '📍 Pinning...' : '📍 Pin My Location'}
-</button>
+              type="button"
+              onClick={handlePinLocation}
+              className="btn"
+              disabled={loadingLocation}
+            >
+              {loadingLocation ? '📍 Pinning...' : '📍 Pin My Location'}
+            </button>
 
-{latitude && longitude && (
-  <div style={{ marginTop: '10px', color: '#006241', fontWeight: 'bold' }}>
-    📍 Location: {latitude.toFixed(6)}, {longitude.toFixed(6)}
-  </div>
-)}
+            {latitude && longitude && (
+              <div style={{ marginTop: '10px', color: '#006241', fontWeight: 'bold' }}>
+                📍 Location: {latitude.toFixed(6)}, {longitude.toFixed(6)}
+              </div>
+            )}
 
-<button type="submit" className="btn">
-  Submit Lead
-</button>
-{successMessage && (
-  <div style={{ marginTop: '10px', color: 'green', fontWeight: 'bold' }}>
-    {successMessage}
-  </div>
-)}
+            <button type="submit" className="btn">
+              Submit Lead
+            </button>
+
+            {successMessage && (
+              <div style={{ marginTop: '10px', color: 'green', fontWeight: 'bold' }}>
+                {successMessage}
+              </div>
+            )}
           </form>
         </div>
       </div>
@@ -257,10 +281,10 @@ const LeadForm = () => {
           {/* Pins (absolute positioned) */}
           <div className="pin" style={{ top: '13.5%', left: '50%' }}>Tripoli 📍</div>
           <div className="pin" style={{ top: '12%', left: '81%' }}>Akkar 📍</div>
-          <div className="pin" style={{ top: '50%', left: '20%' }}>Kesserwan 📍</div>
+          <div className="pin" style={{ top: '50%', left: '21%' }}>Kesserwan 📍</div>
           <div className="pin" style={{ top: '48%', left: '75%' }}>Beqaa 📍</div>
           <div className="pin" style={{ top: '82%', left: '8.78%' }}>Tyre 📍</div>
-          <div className="pin" style={{ top: '60%', left: '48%' }}>Sidon 📍</div>
+          <div className="pin" style={{ top: '60%', left: '54%' }}>Sidon 📍</div>
         </div>
       </div>
     </div>
