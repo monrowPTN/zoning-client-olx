@@ -19,19 +19,19 @@ const LeadForm = ({ onLogout }) => {
       setError('Geolocation is not supported by your browser.');
       return;
     }
-
+  
     setLoadingLocation(true);
-
+  
     navigator.geolocation.getCurrentPosition(
       async (position) => {
         const lat = position.coords.latitude;
         const lon = position.coords.longitude;
-
+  
         setLatitude(lat);
         setLongitude(lon);
         setError('');
         setLoadingLocation(false);
-
+  
         try {
           const response = await fetch(
             `https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lon}`
@@ -53,7 +53,7 @@ const LeadForm = ({ onLogout }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
+
     const driverID = localStorage.getItem('driverID'); // ✅ GET IT HERE
   
     try {
