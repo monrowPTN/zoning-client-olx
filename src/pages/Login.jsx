@@ -115,5 +115,6 @@ const Login = ({ onLoginSuccess, onShowSignup }) => { // ✅ Accept onShowSignup
       </div>
     </div>
   );
+};
 
 export default Login;
