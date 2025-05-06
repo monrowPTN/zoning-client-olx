@@ -97,5 +97,6 @@ const Signup = ({ onShowLogin }) => {
       </div>
     </div>
   );
-  
+};
+
 export default Signup;
