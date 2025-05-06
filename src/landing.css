@@ -22,7 +22,7 @@ body {
 }
 
 .header-logo {
-  width: 80px;
+  width: 100px; /* 🔧 Increased for balance */
   height: auto;
 }
 
@@ -141,7 +141,6 @@ body {
 
 .btn:hover {
   background: linear-gradient(to right, #43cea2, #185a9d); /* Your hover color */
-  /* Remove the translateY */
 }
 
 /* Map Section */
@@ -203,24 +202,39 @@ body {
 /* ✅ Login Page */
 .login-page {
   display: flex;
-  flex-direction: column; /* ✅ Stacked vertically */
+  flex-direction: row; /* 🔧 Changed to side-by-side layout */
   justify-content: center;
   align-items: center;
   height: 100vh;
   width: 100vw;
   background: #F7F9FA;
   margin: 0;
-  padding: 0;
+  padding: 40px;
+  gap: 80px; /* 🔧 spacing between form and map */
 }
 
 .login-card {
   background: #D0F3C5;
   padding: 60px 40px;
   border-radius: 30px;
-  box-shadow: none;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* 🔧 subtle depth */
   text-align: center;
   max-width: 400px;
   width: 100%;
+}
+
+/* ✅ Responsive */
+@media (max-width: 768px) {
+  .login-page {
+    flex-direction: column;
+    padding: 20px;
+    gap: 40px;
+  }
+
+  .map-image {
+    max-width: 300px;
+    width: 100%;
+  }
 }
 
 .logo-wrapper {
