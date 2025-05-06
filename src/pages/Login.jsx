@@ -1,56 +1,109 @@
 import '../landing.css';
 import React, { useState } from 'react';
+import supabase from '../supabaseClient';
 
-const Login = ({ onLoginSuccess }) => {
+const Login = ({ onLoginSuccess, onShowSignup }) => { // ✅ Accept onShowSignup as prop
   const [showMessage, setShowMessage] = useState(false);
-  const [userIdentifier, setUserIdentifier] = useState(''); // ✅ New state
+  const [userIdentifier, setUserIdentifier] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
 
-  const handleLogin = (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
+    setShowMessage(false);
+    setError('');
+
+    // ✅ Correct domain check (cleaned & enforced)
+    const allowedDomains = ['@dubizzle.com.lb', '@olx.com.lb'];
+    const emailLower = userIdentifier.toLowerCase();
+    const isValidDomain = allowedDomains.some(domain => emailLower.endsWith(domain));
+
+    if (!isValidDomain) {
+      setError('❌ Only @dubizzle.com.lb or @olx.com.lb emails are allowed.');
+      return;
+    }
+
+    // ✅ Supabase authentication using email + password
+    const { data, error: signInError } = await supabase.auth.signInWithPassword({
+      email: userIdentifier,
+      password: password,
+    });
+
+    if (signInError) {
+      console.error('❌ Login failed:', signInError.message);
+      setError('❌ Invalid email or password.');
+      return;
+    }
+
+    const user = data?.user;
+
+    if (!user) {
+      setError('❌ Could not retrieve user info.');
+      return;
+    }
+
+    console.log("✅ Logged in as:", user.email);
+
+    // ✅ Save authenticated email to localStorage
+    localStorage.setItem('driverID', user.email);
+    localStorage.setItem('loggedIn', 'true');
+
+    if (onLoginSuccess) {
+      onLoginSuccess(); // Load LeadForm
+    }
+
     setShowMessage(true);
-
-    setTimeout(() => {
-      localStorage.setItem('driverID', userIdentifier); // ✅ Store driver email or phone
-      if (onLoginSuccess) {
-        onLoginSuccess();
-      }
-    }, 1000);
-
-    console.log('Login Submitted ✅');
   };
 
   return (
     <div className="login-page">
-
-      {/* ✅ OLX Logo Header */}
       <div className="header">
         <img src="/olx-logo.png" alt="OLX Logo" className="header-logo" />
       </div>
 
-      {/* ✅ Login Card */}
       <div className="login-card">
         <h1 className="title">Zoning Lead</h1>
         <p className="subtitle">Sign-in</p>
 
+        {/* ✅ Sign-up link (only one) */}
+        <p
+          style={{
+            marginTop: '10px',
+            fontSize: '14px',
+            cursor: 'pointer',
+            textDecoration: 'underline',
+            color: '#007bff'
+          }}
+          onClick={onShowSignup}
+        >
+          ✨ Don’t have an account? Sign Up
+        </p>
+
         <form className="form" onSubmit={handleLogin}>
           <input 
-            type="text" 
-            placeholder="Driver Email or Phone Number" 
+            type="email" 
+            placeholder="Driver Email" 
             className="input validate"
-            pattern="(^\\d{8}$)|(^[a-zA-Z0-9._%+-]+@dubizzle.com.lb$)"
-            title="Enter a valid 8-digit phone number or an email ending with @dubizzle.com.lb"
             required
             value={userIdentifier}
-            onChange={(e) => setUserIdentifier(e.target.value)} // ✅ Add this
+            onChange={(e) => setUserIdentifier(e.target.value)}
           />
           <input
             type="password"
             placeholder="Password"
             className="input"
             required
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
           />
           <button type="submit" className="btn-login">Sign In</button>
         </form>
+
+        {error && (
+          <div className="error-message" style={{ color: 'red', marginTop: '10px' }}>
+            {error}
+          </div>
+        )}
 
         {showMessage && (
           <div className="drive-safe-message">
@@ -58,7 +111,6 @@ const Login = ({ onLoginSuccess }) => {
           </div>
         )}
       </div>
-      
     </div>
   );
 };

@@ -1,29 +1,35 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Login from './pages/Login';
 import LeadForm from './LeadForm';
+import Signup from './pages/Signup'; // ✅ Import Signup
 
 function App() {
-  const [loggedIn, setLoggedIn] = useState(() => {
-    // Read from localStorage on first load
-    return localStorage.getItem('loggedIn') === 'true';
-  });
+  const [loggedIn, setLoggedIn] = useState(() => localStorage.getItem('loggedIn') === 'true');
+  const [driverID, setDriverID] = useState(() => localStorage.getItem('driverID') || '');
+  const [showSignup, setShowSignup] = useState(false); // ✅ Toggle between Login & Signup
 
-  const handleLoginSuccess = () => {
+  const handleLoginSuccess = (identifier) => {
     setLoggedIn(true);
-    localStorage.setItem('loggedIn', 'true'); // ✅ Save login status
+    setDriverID(identifier);
+    localStorage.setItem('loggedIn', 'true');
+    localStorage.setItem('driverID', identifier);
   };
 
   const handleLogout = () => {
     setLoggedIn(false);
-    localStorage.removeItem('loggedIn'); // ✅ Clear login status
+    setDriverID('');
+    localStorage.removeItem('loggedIn');
+    localStorage.removeItem('driverID');
   };
 
   return (
     <div>
       {loggedIn ? (
-        <LeadForm onLogout={handleLogout} />
+        <LeadForm onLogout={handleLogout} driverID={driverID} />
+      ) : showSignup ? (
+        <Signup onSignupSuccess={handleLoginSuccess} onShowLogin={() => setShowSignup(false)} />
       ) : (
-        <Login onLoginSuccess={handleLoginSuccess} />
+        <Login onLoginSuccess={handleLoginSuccess} onShowSignup={() => setShowSignup(true)} />
       )}
     </div>
   );

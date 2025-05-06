@@ -1,5 +1,5 @@
 import supabase from './supabaseClient';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './custom.css';
 import MapPreview from './MapPreview';
 
@@ -13,25 +13,35 @@ const LeadForm = ({ onLogout }) => {
   const [error, setError] = useState('');
   const [loadingLocation, setLoadingLocation] = useState(false);
   const [successMessage, setSuccessMessage] = useState('');
+  const [driverID, setDriverID] = useState(''); // ✅ Declare state
+
+  // ✅ Load driverID from localStorage on mount
+  useEffect(() => {
+    const storedID = localStorage.getItem('driverID');
+    console.log("📦 Loaded driverID from localStorage:", storedID);
+    if (storedID) {
+      setDriverID(storedID);
+    }
+  }, []);
 
   const handlePinLocation = () => {
     if (!navigator.geolocation) {
       setError('Geolocation is not supported by your browser.');
       return;
     }
-  
+
     setLoadingLocation(true);
-  
+
     navigator.geolocation.getCurrentPosition(
       async (position) => {
         const lat = position.coords.latitude;
         const lon = position.coords.longitude;
-  
+
         setLatitude(lat);
         setLongitude(lon);
         setError('');
         setLoadingLocation(false);
-  
+
         try {
           const response = await fetch(
             `https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lon}`
@@ -54,8 +64,8 @@ const LeadForm = ({ onLogout }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const driverID = localStorage.getItem('driverID'); // ✅ GET IT HERE
-  
+    console.log("🧾 DriverID at submit:", driverID); // ✅ Should show the correct email
+
     try {
       const { data, error } = await supabase.from('leads').insert([
         {
@@ -63,22 +73,21 @@ const LeadForm = ({ onLogout }) => {
           phone: phone,
           address: address,
           zone: zone,
-          latitude: latitude,
-          longitude: longitude,
-          driver_id: driverID, // ✅ PASS IT HERE
+          latitude: latitude || null,
+          longitude: longitude || null,
+          driver_id: driverID || null,
         },
       ]);
-  
+
       if (error) {
         console.error('❌ Supabase error:', error.message);
         setError('❌ Failed to submit lead. Please try again.');
         return;
       }
-  
+
       console.log('✅ Lead submitted:', data);
       setSuccessMessage('Lead Submitted Successfully ✅');
-  
-      // Clear form
+
       setTimeout(() => {
         setSuccessMessage('');
         setShopName('');
@@ -95,8 +104,8 @@ const LeadForm = ({ onLogout }) => {
   };
 
   return (
-    // unchanged JSX from the user (omitted for brevity in this part)
-    // everything from return (...) remains as-is
+    // 🧠 KEEP your existing JSX content from here as-is
+    // Just make sure the `onSubmit={handleSubmit}` stays the same
   );
 };
 
