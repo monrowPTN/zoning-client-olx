@@ -50,51 +50,52 @@ const Signup = ({ onShowLogin }) => {
       <div className="header">
         <img src="/olx-logo.png" alt="OLX Logo" className="header-logo" />
       </div>
-
-      <div className="login-card">
-        <h1 className="title">Create Account</h1>
-
-        <form className="form" onSubmit={handleSignup}>
-          <input
-            type="email"
-            placeholder="Your Email"
-            className="input validate"
-            required
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-          <input
-            type="password"
-            placeholder="Password"
-            className="input"
-            required
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-          <button type="submit" className="btn-login">Sign Up</button>
-        </form>
-
-        {error && (
-          <div className="error-message" style={{ color: 'red', marginTop: '10px' }}>
-            {error}
-          </div>
-        )}
-
-        {success && (
-          <div className="success-message" style={{ color: 'green', marginTop: '10px' }}>
-            {success}
-          </div>
-        )}
-
-        <p
-          style={{ marginTop: '20px', cursor: 'pointer', textDecoration: 'underline' }}
-          onClick={onShowLogin}
-        >
-          🔙 Back to Login
-        </p>
+  
+      <div className="login-container">
+        <div className="login-card">
+          <h1 className="title">Create Account</h1>
+  
+          <form className="form" onSubmit={handleSignup}>
+            <input
+              type="email"
+              placeholder="Your Email"
+              className="input validate"
+              required
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+            <input
+              type="password"
+              placeholder="Password"
+              className="input"
+              required
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+            <button type="submit" className="btn-login">Sign Up</button>
+          </form>
+  
+          {error && (
+            <div className="error-message" style={{ color: 'red', marginTop: '10px' }}>
+              {error}
+            </div>
+          )}
+  
+          {success && (
+            <div className="success-message" style={{ color: 'green', marginTop: '10px' }}>
+              {success}
+            </div>
+          )}
+  
+          <p
+            style={{ marginTop: '20px', cursor: 'pointer', textDecoration: 'underline' }}
+            onClick={onShowLogin}
+          >
+            🔙 Back to Login
+          </p>
+        </div>
       </div>
     </div>
   );
-};
-
+  
 export default Signup;
