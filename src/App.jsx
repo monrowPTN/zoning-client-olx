@@ -1,3 +1,6 @@
+import './landing.css';
+import './custom.css';
+import './App.css';
 import { useState } from 'react';
 import Login from './pages/Login';
 import LeadForm from './LeadForm';
