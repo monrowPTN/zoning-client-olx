@@ -13,9 +13,8 @@ const LeadForm = ({ onLogout }) => {
   const [error, setError] = useState('');
   const [loadingLocation, setLoadingLocation] = useState(false);
   const [successMessage, setSuccessMessage] = useState('');
-  const [driverID, setDriverID] = useState(''); // ✅ Declare state
+  const [driverID, setDriverID] = useState('');
 
-  // ✅ Load driverID from localStorage on mount
   useEffect(() => {
     const storedID = localStorage.getItem('driverID');
     console.log("📦 Loaded driverID from localStorage:", storedID);
@@ -63,8 +62,7 @@ const LeadForm = ({ onLogout }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    console.log("🧾 DriverID at submit:", driverID); // ✅ Should show the correct email
+    console.log("🧾 DriverID at submit:", driverID);
 
     try {
       const { data, error } = await supabase.from('leads').insert([
@@ -126,6 +124,7 @@ const LeadForm = ({ onLogout }) => {
           placeholder="Address"
           value={address}
           onChange={(e) => setAddress(e.target.value)}
+          required
         />
         <input
           type="text"
@@ -135,22 +134,17 @@ const LeadForm = ({ onLogout }) => {
           required
         />
         <button type="button" onClick={handlePinLocation}>
-          {loadingLocation ? 'Pinning...' : '📍 Pin Location'}
+          📍 Pin Location
         </button>
-
-        {latitude && longitude && (
-          <MapPreview latitude={latitude} longitude={longitude} />
-        )}
-
         <button type="submit">Submit Lead</button>
       </form>
 
-      {successMessage && <p className="success-message">{successMessage}</p>}
-      {error && <p className="error-message">{error}</p>}
-
+      {successMessage && <p style={{ color: 'green', marginTop: '10px' }}>{successMessage}</p>}
+      {error && <p style={{ color: 'red', marginTop: '10px' }}>{error}</p>}
+      
       <button onClick={onLogout} className="logout-button">Logout</button>
     </div>
-  )
+  );
 };
 
 export default LeadForm;
