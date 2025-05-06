@@ -102,47 +102,61 @@ const LeadForm = ({ onLogout }) => {
   };
 
   return (
-    <div className="lead-form-wrapper">
-      <h2>Lead Submission Form</h2>
-      <form onSubmit={handleSubmit} className="lead-form">
-        <input
-          type="text"
-          placeholder="Shop Name"
-          value={shopName}
-          onChange={(e) => setShopName(e.target.value)}
-          required
-        />
-        <input
-          type="tel"
-          placeholder="Phone Number"
-          value={phone}
-          onChange={(e) => setPhone(e.target.value)}
-          required
-        />
-        <input
-          type="text"
-          placeholder="Address"
-          value={address}
-          onChange={(e) => setAddress(e.target.value)}
-          required
-        />
-        <input
-          type="text"
-          placeholder="Zone"
-          value={zone}
-          onChange={(e) => setZone(e.target.value)}
-          required
-        />
-        <button type="button" onClick={handlePinLocation}>
-          📍 Pin Location
+    <div className="page-wrapper">
+      <div className="header">
+        <img src="/olx-logo.png" alt="OLX Logo" className="header-logo" />
+      </div>
+  
+      <div className="lead-form-card">
+        <h2 className="form-title">Lead Submission Form</h2>
+        <form onSubmit={handleSubmit} className="lead-form">
+          <input
+            type="text"
+            placeholder="Shop Name"
+            value={shopName}
+            onChange={(e) => setShopName(e.target.value)}
+            required
+          />
+          <input
+            type="tel"
+            placeholder="Phone Number"
+            value={phone}
+            onChange={(e) => setPhone(e.target.value)}
+            required
+          />
+          <input
+            type="text"
+            placeholder="Address"
+            value={address}
+            onChange={(e) => setAddress(e.target.value)}
+            required
+          />
+          <input
+            type="text"
+            placeholder="Zone"
+            value={zone}
+            onChange={(e) => setZone(e.target.value)}
+            required
+          />
+  
+          <button type="button" onClick={handlePinLocation}>
+            📍 Pin Location
+          </button>
+  
+          <button type="submit" className="btn-submit">
+            Submit Lead
+          </button>
+        </form>
+  
+        {successMessage && <p className="success-text">{successMessage}</p>}
+        {error && <p className="error-text">{error}</p>}
+  
+        <MapPreview latitude={latitude} longitude={longitude} />
+        
+        <button onClick={onLogout} className="logout-button">
+          Logout
         </button>
-        <button type="submit">Submit Lead</button>
-      </form>
-
-      {successMessage && <p style={{ color: 'green', marginTop: '10px' }}>{successMessage}</p>}
-      {error && <p style={{ color: 'red', marginTop: '10px' }}>{error}</p>}
-      
-      <button onClick={onLogout} className="logout-button">Logout</button>
+      </div>
     </div>
   );
 };
