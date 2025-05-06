@@ -24,7 +24,7 @@ html, body {
 }
 
 .header-logo {
-  width: 100px; /* 🔧 Increased for balance */
+  width: 70px;
   height: auto;
 }
 
@@ -147,15 +147,14 @@ html, body {
 
 /* Map Section */
 .map-wrapper {
-  position: relative;
   display: inline-block;
   width: auto;
   max-width: 100%;
 }
 
 .map-image {
-  max-width: 560px;
-  width: 80%;
+  width: 70%; /* or try 400px */
+  max-width: 500px;
   height: auto;
 }
 
