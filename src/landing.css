@@ -202,6 +202,7 @@ body {
 /* ✅ Login Page */
 .login-page {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100vh;
@@ -239,5 +240,10 @@ body {
 }
 
 .logo-wrapper {
-  display: none; /* ❌ REMOVE duplicate logo inside card */
+  display: block;
+  margin-bottom: 20px;
+}
+
+.logo-wrapper img {
+  width: 80px;
 }
