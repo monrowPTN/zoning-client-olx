@@ -9,6 +9,7 @@ body {
   display: flex;
   flex-direction: column; /* ✅ Added: column to allow header then card */
   align-items: center; /* ✅ Center header horizontally */
+  overflow-x: hidden; /* ✅ Add this line here */
 }
 
 /* Header for OLX Logo */
@@ -201,17 +202,20 @@ body {
 
 /* ✅ Login Page */
 .login-page {
+  height: 100vh;
+  width: 100vw;
   display: flex;
   justify-content: center;
   align-items: center;
+  background: #F7F9FA;
+  overflow: hidden;
+}
+
+.login-container {
+  display: flex;
   flex-direction: column;
-  height: 100vh;
-  width: 100vw;
-  background: hsl(101, 20%, 84%);
-  margin: 0;
-  padding: 0;
-  position: relative;
-  z-index: 1;
+  align-items: center;
+  justify-content: center;
 }
 
 .login-card {

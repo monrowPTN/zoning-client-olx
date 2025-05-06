@@ -57,62 +57,63 @@ const Login = ({ onLoginSuccess, onShowSignup }) => { // ✅ Accept onShowSignup
 
   return (
     <div className="login-page">
-      <div className="header">
-        <img src="/olx-logo.png" alt="OLX Logo" className="header-logo" />
-      </div>
-
-      <div className="login-card">
-        <h1 className="title">Zoning Lead</h1>
-        <p className="subtitle">Sign-in</p>
-
-        {/* ✅ Sign-up link (only one) */}
-        <p
-          style={{
-            marginTop: '10px',
-            fontSize: '14px',
-            cursor: 'pointer',
-            textDecoration: 'underline',
-            color: '#007bff'
-          }}
-          onClick={onShowSignup}
-        >
-          ✨ Don’t have an account? Sign Up
-        </p>
-
-        <form className="form" onSubmit={handleLogin}>
-          <input 
-            type="email" 
-            placeholder="Driver Email" 
-            className="input validate"
-            required
-            value={userIdentifier}
-            onChange={(e) => setUserIdentifier(e.target.value)}
-          />
-          <input
-            type="password"
-            placeholder="Password"
-            className="input"
-            required
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-          <button type="submit" className="btn-login">Sign In</button>
-        </form>
-
-        {error && (
-          <div className="error-message" style={{ color: 'red', marginTop: '10px' }}>
-            {error}
-          </div>
-        )}
-
-        {showMessage && (
-          <div className="drive-safe-message">
-            Drive Safe! 🚦
-          </div>
-        )}
+      <div className="login-container">
+        <div className="header">
+          <img src="/olx-logo.png" alt="OLX Logo" className="header-logo" />
+        </div>
+  
+        <div className="login-card">
+          <h1 className="title">Zoning Lead</h1>
+          <p className="subtitle">Sign-in</p>
+  
+          {/* ✅ Sign-up link (only one) */}
+          <p
+            style={{
+              marginTop: '10px',
+              fontSize: '14px',
+              cursor: 'pointer',
+              textDecoration: 'underline',
+              color: '#007bff'
+            }}
+            onClick={onShowSignup}
+          >
+            Don’t have an account? Sign Up
+          </p>
+  
+          <form className="form" onSubmit={handleLogin}>
+            <input 
+              type="email" 
+              placeholder="Driver Email" 
+              className="input validate"
+              required
+              value={userIdentifier}
+              onChange={(e) => setUserIdentifier(e.target.value)}
+            />
+            <input
+              type="password"
+              placeholder="Password"
+              className="input"
+              required
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+            <button type="submit" className="btn-login">Sign In</button>
+          </form>
+  
+          {error && (
+            <div className="error-message" style={{ color: 'red', marginTop: '10px' }}>
+              {error}
+            </div>
+          )}
+  
+          {showMessage && (
+            <div className="drive-safe-message">
+              Drive Safe! 🚦
+            </div>
+          )}
+        </div>
       </div>
     </div>
   );
-};
 
 export default Login;
