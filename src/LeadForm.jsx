@@ -104,9 +104,53 @@ const LeadForm = ({ onLogout }) => {
   };
 
   return (
-    // 🧠 KEEP your existing JSX content from here as-is
-    // Just make sure the `onSubmit={handleSubmit}` stays the same
-  );
+    <div className="lead-form-wrapper">
+      <h2>Lead Submission Form</h2>
+      <form onSubmit={handleSubmit} className="lead-form">
+        <input
+          type="text"
+          placeholder="Shop Name"
+          value={shopName}
+          onChange={(e) => setShopName(e.target.value)}
+          required
+        />
+        <input
+          type="tel"
+          placeholder="Phone Number"
+          value={phone}
+          onChange={(e) => setPhone(e.target.value)}
+          required
+        />
+        <input
+          type="text"
+          placeholder="Address"
+          value={address}
+          onChange={(e) => setAddress(e.target.value)}
+        />
+        <input
+          type="text"
+          placeholder="Zone"
+          value={zone}
+          onChange={(e) => setZone(e.target.value)}
+          required
+        />
+        <button type="button" onClick={handlePinLocation}>
+          {loadingLocation ? 'Pinning...' : '📍 Pin Location'}
+        </button>
+
+        {latitude && longitude && (
+          <MapPreview latitude={latitude} longitude={longitude} />
+        )}
+
+        <button type="submit">Submit Lead</button>
+      </form>
+
+      {successMessage && <p className="success-message">{successMessage}</p>}
+      {error && <p className="error-message">{error}</p>}
+
+      <button onClick={onLogout} className="logout-button">Logout</button>
+    </div>
+  )
 };
 
 export default LeadForm;
