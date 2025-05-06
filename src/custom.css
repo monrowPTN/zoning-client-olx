@@ -170,11 +170,11 @@ nav span {
   }
 }
 
-img.logo {
-  width: 50px !important;
-  height: auto !important;
+.logo {
   display: block;
-  margin-bottom: 20px;
+  margin: 0 auto 20px auto;
+  width: 100px !important;
+  height: auto !important;
 }
 
 h1 {
