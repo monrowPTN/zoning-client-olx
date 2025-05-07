@@ -369,3 +369,11 @@ select.input {
   width: 130px !important;
   height: auto !important;
 }
+
+/* 🎯 Force proper logo size and centering on second (post-login) page */
+.left-side .card > .logo {
+  display: block;
+  margin: 0 auto 20px auto !important;
+  width: 130px !important;
+  height: auto !important;
+}
