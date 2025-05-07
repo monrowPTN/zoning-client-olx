@@ -242,7 +242,7 @@ html, body {
 }
 
 /* ✅ Responsive */
-@media (max-width: 768px) {
+@media (max-width: 768px) {}
   .login-page {
     padding: 0;
     margin: 0 auto;
@@ -250,9 +250,16 @@ html, body {
     align-items: center;
   }
 
-  .login-card {
-    margin: 0 auto;
+  .login-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
   }
+
+.login-card {
+  margin-top: 0;
 }
 
   .map-image {
@@ -260,11 +267,39 @@ html, body {
     width: 100%;
   }
 
-.logo-wrapper {
-  display: block;
-  margin-bottom: 20px;
-}
+  
 
 .logo-wrapper img {
   width: 80px;
+}
+
+/* 👇 Append this at the very end of your existing CSS */
+.login-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 60px;
+  gap: 20px;
+}
+
+.login-wrapper .logo {
+  width: 100px;
+  height: auto;
+}
+
+@media (max-width: 768px) {
+  .login-wrapper {
+    margin-top: 40px;
+  }
+
+  .login-wrapper .logo {
+    width: 80px;
+  }
+}
+
+@media (min-width: 901px) {
+  .login-wrapper .logo {
+    width: 110px !important;
+  }
 }

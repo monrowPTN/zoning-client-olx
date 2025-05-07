@@ -57,15 +57,13 @@ const Login = ({ onLoginSuccess, onShowSignup }) => { // ✅ Accept onShowSignup
 
   return (
     <div className="login-page">
-      <div className="login-container">
-        <div className="header">
-          <img src="/olx-logo.png" alt="OLX Logo" className="header-logo" />
-        </div>
-  
+      <div className="login-wrapper">
+        <img className="logo" src="/olx-logo.png" alt="OLX Logo" />
+
         <div className="login-card">
           <h1 className="title">Zoning Lead</h1>
           <p className="subtitle">Sign-in</p>
-  
+
           {/* ✅ Sign-up link (only one) */}
           <p
             style={{
@@ -79,7 +77,7 @@ const Login = ({ onLoginSuccess, onShowSignup }) => { // ✅ Accept onShowSignup
           >
             Don’t have an account? Sign Up
           </p>
-  
+
           <form className="form" onSubmit={handleLogin}>
             <input 
               type="email" 
@@ -99,13 +97,13 @@ const Login = ({ onLoginSuccess, onShowSignup }) => { // ✅ Accept onShowSignup
             />
             <button type="submit" className="btn-login">Sign In</button>
           </form>
-  
+
           {error && (
             <div className="error-message" style={{ color: 'red', marginTop: '10px' }}>
               {error}
             </div>
           )}
-  
+
           {showMessage && (
             <div className="drive-safe-message">
               Drive Safe! 🚦
