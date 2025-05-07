@@ -24,7 +24,7 @@ html, body {
 }
 
 .header-logo {
-  width: 70px;
+  width: 130px; /* 🔧 Increased from 70px */
   height: auto;
 }
 
@@ -223,15 +223,18 @@ html, body {
 
 .logo-wrapper img,
 .login-wrapper .logo,
-.header-logo {
-  width: 100px;
-  height: auto;
-  margin-bottom: 20px;
+.header-logo,
+.card .logo,
+.login-card .logo {
+  width: 130px !important;  /* ✅ Enlarged consistently */
+  height: auto !important;
+  margin: 0 auto 20px auto;
+  display: block;
 }
 
 @media (min-width: 768px) {
   .header-logo {
-    width: 110px;
+    width: 130px;
   }
 }
 
@@ -242,7 +245,7 @@ html, body {
   }
 
   .header-logo {
-    width: 80px;
+    width: 100px;
     margin-bottom: 16px;
   }
 
@@ -251,12 +254,12 @@ html, body {
   }
 
   .login-wrapper .logo {
-    width: 80px;
+    width: 100px;
   }
 }
 
 @media (min-width: 901px) {
   .login-wrapper .logo {
-    width: 110px !important;
+    width: 130px !important;
   }
 }

@@ -274,7 +274,7 @@ select.input {
 .lead-card .logo {
   display: block;
   margin: 0 auto 20px auto;
-  width: 100px !important;
+  width: 130px !important;
   height: auto !important;
 }
 
@@ -333,4 +333,34 @@ select.input {
   z-index: 2;
   animation: fadeInCard 1.2s ease forwards;
   opacity: 0;
+}
+
+/* 🔧 Enhance logo appearance post-login */
+.logo,
+.card .logo,
+.lead-card .logo,
+.login-wrapper .logo {
+  display: block;
+  margin: 0 auto 20px auto;
+  width: 130px !important;  /* ✅ Enlarged from 100px */
+  height: auto !important;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .logo,
+  .lead-card .logo,
+  .login-wrapper .logo {
+    width: 100px !important;
+    margin-top: 10px;
+  }
+}
+
+/* Desktop adjustments */
+@media (min-width: 901px) {
+  .logo,
+  .lead-card .logo,
+  .login-wrapper .logo {
+    width: 130px !important;
+  }
 }
