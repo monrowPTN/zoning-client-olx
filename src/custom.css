@@ -153,8 +153,8 @@ nav span {
   background: #D0F3C5;
   padding: 70px 50px;
   border-radius: 30px;
-  width: 100%;
-  max-width: 400px;
+  width: 440px; /* 🔧 Increased from 400px */
+  max-width: 480px;
   text-align: center;
   box-shadow: none;
   position: relative;
@@ -366,14 +366,6 @@ select.input {
 .left-side .card .logo {
   display: block;
   margin: 0 auto 20px auto;
-  width: 130px !important;
-  height: auto !important;
-}
-
-/* 🎯 Force proper logo size and centering on second (post-login) page */
-.left-side .card > .logo {
-  display: block;
-  margin: 0 auto 20px auto !important;
   width: 130px !important;
   height: auto !important;
 }
