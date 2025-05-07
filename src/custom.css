@@ -181,6 +181,14 @@ nav span {
   height: auto !important;
 }
 
+/* 🔧 Ensure OLX logo is centered and sized correctly post-login */
+.card .logo {
+  display: block;
+  margin: 0 auto 20px auto;
+  width: 130px !important;
+  height: auto !important;
+}
+
 h1 {
   font-size: 2rem;
   color: #00b5ad;
@@ -333,17 +341,6 @@ select.input {
   z-index: 2;
   animation: fadeInCard 1.2s ease forwards;
   opacity: 0;
-}
-
-/* 🔧 Enhance logo appearance post-login */
-.logo,
-.card .logo,
-.lead-card .logo,
-.login-wrapper .logo {
-  display: block;
-  margin: 0 auto 20px auto;
-  width: 130px !important;  /* ✅ Enlarged from 100px */
-  height: auto !important;
 }
 
 /* Mobile adjustments */
