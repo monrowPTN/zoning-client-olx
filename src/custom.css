@@ -269,39 +269,54 @@ select.input {
   background: linear-gradient(to right, #43cea2, #185a9d);
 }
 
-.login-wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-  width: 100%;
-  padding: 20px 0;
-}
-
-.login-wrapper .logo {
+/* ✅ Ensure logo appears inside login box */
+.login-wrapper .logo,
+.lead-card .logo {
   display: block;
-  margin: 0 auto 25px auto;
+  margin: 0 auto 20px auto;
   width: 100px !important;
   height: auto !important;
 }
 
-.login-card {
+.login-wrapper,
+.lead-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 20px;
+}
+
+.login-card,
+.lead-card {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
   background: #D0F3C5;
   padding: 60px 40px;
-  padding-top: 40px;
   border-radius: 30px;
   max-width: 400px;
   width: 100%;
-  margin: 0 auto;
 }
 
 @media (max-width: 768px) {
   .logo {
-    margin-top: 0;
+    margin-top: 10px;
   }
+}
+
+/* 🔧 Fix vertical alignment inside both login and lead card */
+.login-wrapper, .lead-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 0;
+}
+
+.login-card, .lead-card {
+  margin: 0;
+  padding-top: 40px;
 }
