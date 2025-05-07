@@ -58,9 +58,10 @@ const Login = ({ onLoginSuccess, onShowSignup }) => { // ✅ Accept onShowSignup
   return (
     <div className="login-page">
       <div className="login-wrapper">
-        <img className="logo" src="/olx-logo.png" alt="OLX Logo" />
-
         <div className="login-card">
+          {/* ✅ OLX logo moved inside the card and above the title */}
+          <img className="logo" src="/olx-logo.png" alt="OLX Logo" />
+
           <h1 className="title">Zoning Lead</h1>
           <p className="subtitle">Sign-in</p>
 
