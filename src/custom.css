@@ -54,7 +54,7 @@ body::before {
 .left-side {
   padding-left: 150px;
   padding-right: 50px;
-  width: 400px;
+  width: 480px; /* ✅ increased from 400px */
   display: flex;
   align-items: center;
   justify-content: flex-end;
@@ -327,20 +327,6 @@ select.input {
 .login-card, .lead-card {
   margin: 0;
   padding-top: 40px;
-}
-
-.card {
-  background: #D0F3C5;
-  padding: 70px 50px;
-  border-radius: 30px;
-  width: 100%;
-  max-width: 400px;
-  text-align: center;
-  box-shadow: none;
-  position: relative;
-  z-index: 2;
-  animation: fadeInCard 1.2s ease forwards;
-  opacity: 0;
 }
 
 /* Mobile adjustments */
