@@ -398,6 +398,23 @@ select.input {
   }
 }
 
+/* 🔧 Desktop login logo size fix */
+@media (min-width: 901px) {
+  .login-card .logo {
+    width: 110px !important; /* Increased from 100px by 10% */
+  }
+}
+
+/* 🔧 Center login page on larger screens */
+@media (min-width: 901px) {
+  .login-card {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
 @media (max-width: 900px) and (orientation: landscape) {
   .card, .login-card {
     max-width: 80%;
