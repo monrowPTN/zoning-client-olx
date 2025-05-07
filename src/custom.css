@@ -269,13 +269,17 @@ select.input {
   .page-layout {
     flex-direction: column;
     align-items: center;
-    padding: 20px;
+    justify-content: center;
+    padding: 0;
+    margin: 0 auto;
   }
 
   .left-side {
     width: 100%;
     padding: 0;
+    margin: 0 auto;
     justify-content: center;
+    align-items: center;
   }
 
   .right-side {
@@ -286,10 +290,12 @@ select.input {
     max-width: 90%;
     width: 100%;
     padding: 40px 20px;
+    margin: 0 auto;
   }
 
   .logo {
     width: 60px !important;
+    margin: 0 auto 20px auto;
   }
 }
 
