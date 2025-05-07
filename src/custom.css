@@ -361,3 +361,11 @@ select.input {
     width: 130px !important;
   }
 }
+
+/* ✅ Final fix for second page OLX logo (lead page) */
+.left-side .card .logo {
+  display: block;
+  margin: 0 auto 20px auto;
+  width: 130px !important;
+  height: auto !important;
+}
