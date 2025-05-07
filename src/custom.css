@@ -458,3 +458,29 @@ select.input {
     white-space: normal; /* ✅ Allows wrapping */
   }
 }
+
+/* ✅ Login Wrapper for better control */
+.login-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 20px;
+}
+
+/* ✅ Ensure logo sits above the title */
+.login-wrapper .logo {
+  display: block;
+  margin: 0 auto 20px auto;
+  width: 100px !important;
+  height: auto !important;
+}
+
+/* ✅ Center login-card inside wrapper */
+.login-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
