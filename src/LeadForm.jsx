@@ -79,10 +79,10 @@ const LeadForm = ({ onLogout }) => {
     <div className="page-layout">
       {/* Left Side (Form) */}
       <div className="left-side">
-        <div className="card">
+        <div className="form-wrapper">
           <img src="/olx-logo.png" alt="OLX Logo" className="logo" />
           <h1 className="title">New Zoning Lead</h1>
-
+  
           {/* ✅ Logout Button */}
           <button
             onClick={() => {
