@@ -79,11 +79,10 @@ const LeadForm = ({ onLogout }) => {
     <div className="page-layout">
       {/* Left Side (Form) */}
       <div className="left-side">
-        <div className="form-wrapper">
+        <div className="card">
           <img src="/olx-logo.png" alt="OLX Logo" className="logo" />
           <h1 className="title">New Zoning Lead</h1>
   
-          {/* ✅ Logout Button */}
           <button
             onClick={() => {
               localStorage.removeItem('loggedIn');
@@ -94,6 +93,8 @@ const LeadForm = ({ onLogout }) => {
           >
             Logout
           </button>
+  
+          {/* keep rest of form fields here as-is */}
 
           <form className="form" onSubmit={handleSubmit}>
             <input
