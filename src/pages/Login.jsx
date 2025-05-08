@@ -49,7 +49,7 @@ const Login = ({ onLoginSuccess, onShowSignup }) => { // ✅ Accept onShowSignup
     localStorage.setItem('loggedIn', 'true');
 
     if (onLoginSuccess) {
-      onLoginSuccess(); // Load LeadForm
+      onLoginSuccess(user.email); // Load LeadForm
     }
 
     setShowMessage(true);
