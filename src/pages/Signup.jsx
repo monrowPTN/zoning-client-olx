@@ -31,6 +31,8 @@ const Signup = ({ onShowLogin }) => {
     const { data, error: signUpError } = await supabase.auth.signUp({
       email,
       password,
+      options: {
+        emailRedirectTo: 'https://zoning-client.vercel.app/lead',
     });
   
     if (signUpError) {
