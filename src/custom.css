@@ -86,8 +86,8 @@ body::before {
 }
 
 .input {
-  width: 120%;
-  max-width: 288px;
+  width: 90%;
+  max-width: 320px !important;   /* Ensures uniform size across all */
   padding: 10px;
   margin-bottom: 15px;
   border-radius: 20px;

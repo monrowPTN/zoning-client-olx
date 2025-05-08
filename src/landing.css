@@ -73,6 +73,10 @@ html, body {
   font-weight: 800;
   color: #006241;
   margin-bottom: 10px;
+  margin-top: -1px;
+  padding: 8px;
+  transform: translateY(-20px); /* Moves up 10px */
+  position: relative;
 }
 
 .subtitle {
@@ -89,7 +93,7 @@ html, body {
 }
 
 .input, .btn {
-  width: 100%;
+  width: 80%;
   max-width: 370px;
   padding: 14px;
   border-radius: 20px;

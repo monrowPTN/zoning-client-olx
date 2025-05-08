@@ -103,7 +103,7 @@ const LeadForm = ({ onLogout }) => {
               placeholder="🏪 Shop Name"
               value={shopName}
               onChange={(e) => setShopName(e.target.value)}
-              className="input"
+              className="input shop-name-input"  // <-- extra class here
               required
             />
             <input
