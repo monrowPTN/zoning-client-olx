@@ -47,7 +47,7 @@ const LeadForm = ({ onLogout }) => {
           zone: zone,
           latitude: latitude,
           longitude: longitude,
-          driver_id: localStorage.getIte('driverID'),
+          driver_id: localStorage.getItem('driverID'),
         },
       ]);
 
