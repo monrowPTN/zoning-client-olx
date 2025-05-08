@@ -87,7 +87,6 @@ body::before {
 
 .input {
   width: 90%;
-  max-width: 320px !important;   /* Ensures uniform size across all */
   padding: 10px;
   margin-bottom: 15px;
   border-radius: 20px;
@@ -211,8 +210,19 @@ p {
   margin-bottom: 20px;
 }
 
-.btn,
-.btn-login,
+
+.btn {
+max-width: 360px; /*red log out button*/
+width: 90%;
+padding: 10px;
+}
+
+.btn-login {
+  max-width: 270px;
+  width: 110%;
+  padding: 10px;
+}
+
 .logout-btn {
   width: 90%;
   max-width: 288px;
