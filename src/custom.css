@@ -86,7 +86,7 @@ body::before {
 }
 
 .input {
-  width: 90%;
+  width: 120%;
   max-width: 288px;
   padding: 10px;
   margin-bottom: 15px;
@@ -305,8 +305,8 @@ select.input {
   background: #D0F3C5;
   padding: 60px 40px;
   border-radius: 30px;
-  max-width: 400px;
-  width: 100%;
+  max-width: 500px;
+  width: 150%;
 }
 
 @media (max-width: 768px) {

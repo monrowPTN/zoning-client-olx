@@ -82,7 +82,7 @@ const Login = ({ onLoginSuccess, onShowSignup }) => { // ✅ Accept onShowSignup
           <form className="form" onSubmit={handleLogin}>
             <input 
               type="email" 
-              placeholder="Driver Email" 
+              placeholder="Email" 
               className="input validate"
               required
               value={userIdentifier}
