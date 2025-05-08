@@ -33,7 +33,8 @@ const Signup = ({ onShowLogin }) => {
       password,
       options: {
         emailRedirectTo: 'https://zoning-client.vercel.app/lead',
-    });
+      }
+      });
   
     if (signUpError) {
       console.error('❌ Signup failed:', signUpError.message);
