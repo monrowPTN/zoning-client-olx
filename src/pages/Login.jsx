@@ -37,8 +37,8 @@ const Login = ({ onLoginSuccess, onShowSignup }) => { // ✅ Accept onShowSignup
 
     const user = data?.user;
 
-    if (!user) {
-      setError('❌ Could not retrieve user info.');
+    if (!user.email_confirmed_at) {
+      setError('❌ Please verify your email before logging in.');
       return;
     }
 
