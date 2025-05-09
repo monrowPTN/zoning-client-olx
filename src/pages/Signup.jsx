@@ -41,7 +41,7 @@ const Signup = ({ onShowLogin }) => {
       email,
       password,
       options: {
-        emailRedirectTo: 'https://zoning-client-olx.vercel.app/lead',
+        emailRedirectTo: 'https://zoning-client-olx.vercel.app/',
       }
       });
   
