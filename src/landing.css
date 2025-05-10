@@ -274,3 +274,23 @@ html, body {
     width: 130px !important;
   }
 }
+
+@media (max-width: 600px) {
+  .card {
+    margin: 0 20px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .form {
+    width: 100%;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  .input, .btn, .btn-login {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box;
+  }
+}
