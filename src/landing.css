@@ -37,7 +37,7 @@ html, body {
 }
 
 .left-side {
-  padding-right: 120px;
+  padding-right: 30px;
   width: 400px;
   display: flex;
   align-items: center;
