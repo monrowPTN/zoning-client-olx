@@ -60,7 +60,6 @@ const LeadForm = ({ onLogout }) => {
       console.log('✅ Lead submitted:', data);
       setSuccessMessage('Lead Submitted Successfully ✅');
 
-      // Clear form after 3s
       setTimeout(() => {
         setSuccessMessage('');
         setShopName('');
@@ -78,24 +77,22 @@ const LeadForm = ({ onLogout }) => {
 
   return (
     <div className="page-layout">
-      {/* Left Side (Form) */}
       <div className="left-side">
         <div className="card">
           <img src="/olx-logo.png" alt="OLX Logo" className="logo" />
           <h1 className="title">New Zoning Lead</h1>
-  
+
           <button
             onClick={() => {
               localStorage.removeItem('loggedIn');
               if (onLogout) onLogout();
             }}
-            className="btn"
+            className="btn btn-logout"
             style={{ marginBottom: '20px', background: '#ff4d4f' }}
+            aria-label="Logout"
           >
             Logout
           </button>
-  
-          {/* keep rest of form fields here as-is */}
 
           <form className="form" onSubmit={handleSubmit}>
             <input
@@ -103,29 +100,36 @@ const LeadForm = ({ onLogout }) => {
               placeholder="🏪 Shop Name"
               value={shopName}
               onChange={(e) => setShopName(e.target.value)}
-              className="input shop-name-input"  // <-- extra class here
+              className="input input-shop"
               required
+              aria-label="Shop Name"
             />
             <input
               type="tel"
               placeholder="📞 Phone Number"
               value={phone}
               onChange={(e) => setPhone(e.target.value)}
-              className="input"
+              className="input input-phone"
               required
+              aria-label="Phone Number"
             />
             <input
               type="text"
               placeholder="📍 Address"
               value={address}
               onChange={(e) => setAddress(e.target.value)}
-              className="input"
+              className="input input-address"
               required
+              aria-label="Address"
             />
-            <select className="input" value={zone} onChange={(e) => setZone(e.target.value)} required>
+            <select
+              className="input input-zone"
+              value={zone}
+              onChange={(e) => setZone(e.target.value)}
+              required
+              aria-label="Select Zone"
+            >
               <option value="">Select Zone</option>
-
-              {/* ✅ Beirut */}
               <optgroup label="Beirut">
                 <option value="Achrafieh">Achrafieh</option>
                 <option value="Ain El Mreisseh">Ain El Mreisseh</option>
@@ -153,8 +157,6 @@ const LeadForm = ({ onLogout }) => {
                 <option value="Wata El Msaytbeh">Wata El Msaytbeh</option>
                 <option value="Zokak El Blatt">Zokak El Blatt</option>
               </optgroup>
-
-              {/* ✅ Mount Lebanon */}
               <optgroup label="Mount Lebanon">
                 <option value="Ain Anoub">Ain Anoub</option>
                 <option value="Aintoura">Aintoura</option>
@@ -205,8 +207,6 @@ const LeadForm = ({ onLogout }) => {
                 <option value="Zouk Mikael">Zouk Mikael</option>
                 <option value="Zouk Mosbeh">Zouk Mosbeh</option>
               </optgroup>
-
-              {/* ✅ North Lebanon */}
               <optgroup label="North Lebanon">
                 <option value="Akkar">Akkar</option>
                 <option value="Amioun">Amioun</option>
@@ -223,8 +223,6 @@ const LeadForm = ({ onLogout }) => {
                 <option value="Tripoli">Tripoli</option>
                 <option value="Zgharta">Zgharta</option>
               </optgroup>
-
-              {/* ✅ South Lebanon */}
               <optgroup label="South Lebanon">
                 <option value="Bint Jbeil">Bint Jbeil</option>
                 <option value="Jezzine">Jezzine</option>
@@ -234,8 +232,6 @@ const LeadForm = ({ onLogout }) => {
                 <option value="Saida">Saida (Sidon)</option>
                 <option value="Sour">Sour (Tyre)</option>
               </optgroup>
-
-              {/* ✅ Bekaa */}
               <optgroup label="Bekaa">
                 <option value="Anjar">Anjar</option>
                 <option value="Baalbek">Baalbek</option>
@@ -251,8 +247,9 @@ const LeadForm = ({ onLogout }) => {
             <button
               type="button"
               onClick={handlePinLocation}
-              className="btn"
+              className="btn btn-pin"
               disabled={loadingLocation}
+              aria-label="Pin My Location"
             >
               {loadingLocation ? '📍 Pinning...' : '📍 Pin My Location'}
             </button>
@@ -263,7 +260,7 @@ const LeadForm = ({ onLogout }) => {
               </div>
             )}
 
-            <button type="submit" className="btn">
+            <button type="submit" className="btn btn-submit" aria-label="Submit Lead">
               Submit Lead
             </button>
 
@@ -276,11 +273,9 @@ const LeadForm = ({ onLogout }) => {
         </div>
       </div>
 
-      {/* Right Side (Map + Pins) */}
       <div className="right-side">
         <div className="map-wrapper">
           <img src="/lebanon-map.png" alt="Lebanon Map" className="map-image" />
-          {/* Pins (absolute positioned) */}
           <div className="pin" style={{ top: '13.5%', left: '50%' }}>Tripoli 📍</div>
           <div className="pin" style={{ top: '12%', left: '81%' }}>Akkar 📍</div>
           <div className="pin" style={{ top: '50%', left: '21%' }}>Kesserwan 📍</div>
