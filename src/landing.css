@@ -204,9 +204,10 @@ html, body {
   align-items: center;
   min-height: 100vh;
   width: 100%;
-  padding: 0;
+  padding: 16px;
   margin: 0;
   box-sizing: border-box;
+  display: flex;
 }
 
 .login-container {
@@ -221,7 +222,7 @@ html, body {
 
 .login-card {
   background: #D0F3C5;
-  padding: 70px 50px;
+  padding: 60px 24px;
   border-radius: 30px;
   box-shadow: none;
   text-align: center;
