@@ -75,7 +75,7 @@ html, body {
   margin-bottom: 10px;
   margin-top: -1px;
   padding: 8px;
-  transform: translateY(-20px); /* Moves up 10px */
+  transform: translateY(-20px);
   position: relative;
 }
 
@@ -92,16 +92,13 @@ html, body {
   align-items: center;
 }
 
-.input, .btn {
-  width: 120%;
+.input {
+  width: 100%;
   max-width: 370px;
   padding: 14px;
   border-radius: 20px;
   font-size: 1rem;
   box-sizing: border-box;
-}
-
-.input {
   background: #E8F8D8;
   border: 1px solid #ccc;
   color: #333;
@@ -114,15 +111,22 @@ html, body {
 }
 
 .btn {
+  width: 100%;
+  max-width: 360px;
+  padding: 16px 32px;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: 600;
   background: linear-gradient(to right, #48c6ef, #6f86d6);
   color: white;
   border: none;
-  font-weight: 600;
-  font-size: 1.1rem;
   cursor: pointer;
-  border-radius: 50px;
-  padding: 16px 32px;
   transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+.btn:hover {
+  background: linear-gradient(to right, #43cea2, #185a9d);
 }
 
 .btn-login {
@@ -141,10 +145,6 @@ html, body {
 
 .btn-login:hover {
   background: linear-gradient(90deg, #0099cc, #00b5ad);
-}
-
-.btn:hover {
-  background: linear-gradient(to right, #43cea2, #185a9d);
 }
 
 .map-wrapper {
@@ -232,10 +232,34 @@ html, body {
   margin: 0 auto;
 }
 
-.logo-wrapper img,
-.login-wrapper .logo,
-.header-logo,
-.card .logo,
+.logo-wrapper img {
+  width: 100px !important;
+  height: auto !important;
+  margin: 0 auto 20px auto;
+  display: block;
+}
+
+.login-wrapper .logo {
+  width: 100px !important;
+  height: auto !important;
+  margin: 0 auto 20px auto;
+  display: block;
+}
+
+.header-logo {
+  width: 100px !important;
+  height: auto !important;
+  margin: 0 auto 20px auto;
+  display: block;
+}
+
+.card .logo {
+  width: 100px !important;
+  height: auto !important;
+  margin: 0 auto 20px auto;
+  display: block;
+}
+
 .login-card .logo {
   width: 100px !important;
   height: auto !important;
@@ -289,9 +313,21 @@ html, body {
     box-sizing: border-box;
   }
 
-  .input, .btn, .btn-login {
+  .input {
     width: 100% !important;
     max-width: 100% !important;
     box-sizing: border-box;
+  }
+
+  .btn {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box;
+  }
+
+  .btn-login {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
   }
 }
