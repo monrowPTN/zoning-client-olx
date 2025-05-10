@@ -51,16 +51,6 @@ body::before {
   z-index: 2;
 }
 
-.left-side {
-  padding-left: 150px;
-  padding-right: 50px;
-  width: 480px; /* ✅ increased from 400px */
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  z-index: 2;
-}
-
 .right-side {
   flex-grow: 1;
   display: flex;
