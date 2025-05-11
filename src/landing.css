@@ -1,5 +1,5 @@
 /* General Layout */
-html, body {
+html {
   margin: 0;
   padding: 0;
   font-family: 'Inter', sans-serif;
@@ -12,7 +12,13 @@ html, body {
   overflow: hidden;
 }
 
-/* Header for OLX Logo */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Header */
 .header {
   width: 100%;
   padding: 20px 0;
@@ -56,6 +62,7 @@ html, body {
   z-index: 2;
 }
 
+/* Card */
 .card {
   background: #D0F3C5;
   padding: 70px 50px;
@@ -67,6 +74,14 @@ html, body {
   z-index: 2;
 }
 
+.card .logo {
+  width: 100px !important;
+  height: auto !important;
+  margin: 0 auto 20px auto;
+  display: block;
+}
+
+/* Title & Subtitle */
 .title {
   font-size: 2.2rem;
   font-weight: 800;
@@ -84,24 +99,29 @@ html, body {
   margin-bottom: 30px;
 }
 
+/* Form */
 .form {
   display: flex;
   flex-direction: column;
   gap: 20px;
   align-items: center;
+  width: 100%;
+  padding: 0;
+  box-sizing: border-box;
 }
 
+/* Input Fields */
 .input {
   width: 100%;
   max-width: 370px;
   padding: 14px;
   border-radius: 20px;
   font-size: 1rem;
-  box-sizing: border-box;
   background: #E8F8D8;
   border: 1px solid #ccc;
   color: #333;
   outline: none;
+  box-sizing: border-box;
 }
 
 .input:focus {
@@ -109,6 +129,7 @@ html, body {
   border: 2px solid #00b5ad;
 }
 
+/* Button Styling */
 .btn {
   width: 100%;
   max-width: 360px;
@@ -146,6 +167,7 @@ html, body {
   background: linear-gradient(90deg, #0099cc, #00b5ad);
 }
 
+/* Map Styles */
 .map-wrapper {
   display: inline-block;
   width: auto;
@@ -158,6 +180,7 @@ html, body {
   height: auto;
 }
 
+/* Pin */
 .pin {
   position: absolute;
   font-size: 14px;
@@ -178,6 +201,7 @@ html, body {
   transform: translate(-50%, -50%) scale(1.2);
 }
 
+/* Drive Safe Message */
 .drive-safe-message {
   margin-top: 20px;
   font-size: 18px;
@@ -186,6 +210,7 @@ html, body {
   animation: fadeIn 1.5s ease forwards;
 }
 
+/* Animations */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -197,7 +222,7 @@ html, body {
   }
 }
 
-/* ✅ Properly center the login page */
+/* Login Page Centering */
 .login-page {
   justify-content: center;
   align-items: center;
@@ -231,6 +256,7 @@ html, body {
   margin: 0 auto;
 }
 
+/* Logo Wrappers */
 .logo-wrapper img {
   width: 100px !important;
   height: auto !important;
@@ -252,13 +278,6 @@ html, body {
   display: block;
 }
 
-.card .logo {
-  width: 100px !important;
-  height: auto !important;
-  margin: 0 auto 20px auto;
-  display: block;
-}
-
 .login-card .logo {
   width: 100px !important;
   height: auto !important;
@@ -266,7 +285,7 @@ html, body {
   display: block;
 }
 
-/* Responsive tweaks */
+/* Responsive Tweaks */
 @media (min-width: 768px) {
   .header-logo {
     width: 130px;
@@ -306,12 +325,6 @@ html, body {
     max-width: 100%;
     box-sizing: border-box;
     padding: 40px 16px;
-  }
-
-  .form {
-    width: 100%;
-    padding: 0;
-    box-sizing: border-box;
   }
 
   .input {

@@ -1,13 +1,25 @@
+/* Google Font Import */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
 
-*, *::before, *::after {
+/* Box Sizing Reset */
+* {
   box-sizing: border-box;
 }
 
+*::before {
+  box-sizing: border-box;
+}
+
+*::after {
+  box-sizing: border-box;
+}
+
+/* Scroll Behavior */
 html {
   scroll-behavior: smooth;
 }
 
+/* Body Styling */
 body {
   margin: 0;
   padding: 0;
@@ -19,14 +31,6 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-}
-
-.title {
-  font-size: 2rem;
-  font-weight: 800;
-  color: #006241;
-  margin-bottom: 10px;
-  white-space: nowrap;
 }
 
 body::before {
@@ -43,6 +47,16 @@ body::before {
   pointer-events: none;
 }
 
+/* Title */
+.title {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #006241;
+  margin-bottom: 10px;
+  white-space: nowrap;
+}
+
+/* Page Layout */
 .page-layout {
   display: flex;
   width: 100%;
@@ -62,6 +76,7 @@ body::before {
   z-index: 2;
 }
 
+/* Map */
 .map-wrapper {
   position: relative;
   display: inline-block;
@@ -75,29 +90,44 @@ body::before {
   display: block;
 }
 
+/* Inputs */
 .input {
   width: 90%;
-  padding: 10px;
+  padding: 14px 18px;
   margin-bottom: 15px;
-  border-radius: 20px;
-  background: #E8F8D8;
+  border-radius: 12px;
+  background: #F7FFF0;
   border: 1px solid #ccc;
   color: #333;
   font-size: 1rem;
   box-sizing: border-box;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
 }
 
 .input:focus {
-  background: white;
+  background: #fff;
   border: 2px solid #00b5ad;
   outline: none;
 }
 
-@keyframes parallaxMove {
-  0% { transform: translateY(-30%); }
-  100% { transform: translateY(-10%); }
+select.input {
+  appearance: none;
+  background-color: #E8F8D8;
+  background-image: url("data:image/svg+xml,%3Csvg fill='black' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.516 7.548L10 12.032l4.484-4.484L15.9 8.966l-5.9 5.9-5.9-5.9z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 1rem;
+  padding-right: 2.5rem;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  font-size: 1rem;
+  color: #333;
+  width: 90%;
+  max-width: 288px;
+  margin-bottom: 15px;
 }
 
+/* Navigation */
 nav {
   background: white;
   padding: 15px 30px;
@@ -128,6 +158,7 @@ nav span {
   color: #00b5ad;
 }
 
+/* Main Content */
 .main-content {
   margin-top: 100px;
   display: flex;
@@ -138,11 +169,12 @@ nav span {
   z-index: 1;
 }
 
+/* Card */
 .card {
   background: #D0F3C5;
   padding: 70px 50px;
   border-radius: 30px;
-  width: 440px; /* 🔧 Increased from 400px */
+  width: 440px;
   max-width: 480px;
   text-align: center;
   box-shadow: none;
@@ -152,6 +184,7 @@ nav span {
   opacity: 0;
 }
 
+/* Card Animation */
 @keyframes fadeInCard {
   from {
     opacity: 0;
@@ -163,6 +196,7 @@ nav span {
   }
 }
 
+/* Logo */
 .logo {
   display: block;
   margin: 0 auto 20px auto;
@@ -170,12 +204,8 @@ nav span {
   height: auto !important;
 }
 
-/* 🔧 Ensure OLX logo is centered and sized correctly post-login */
 .card .logo {
-  display: block;
-  margin: 0 auto 20px auto;
   width: 130px !important;
-  height: auto !important;
 }
 
 h1 {
@@ -191,6 +221,7 @@ p {
   line-height: 1.6;
 }
 
+/* Submit Button */
 .submit-btn {
   background: linear-gradient(90deg, hsl(177, 53%, 60%), hsl(92, 74%, 82%));
   padding: 16px 32px;
@@ -200,11 +231,12 @@ p {
   margin-bottom: 20px;
 }
 
-
+/* Individual Buttons */
 .btn {
-max-width: 360px; /*red log out button*/
-width: 90%;
-padding: 10px;
+  max-width: 360px;
+  width: 90%;
+  padding: 10px;
+  position: relative;
 }
 
 .btn-login {
@@ -229,33 +261,25 @@ padding: 10px;
   box-sizing: border-box;
 }
 
-.btn:hover,
-.btn-login:hover,
+.btn:hover {
+  transform: scale(1.03);
+  background: linear-gradient(to right, #43cea2, #185a9d);
+  box-shadow: 0 8px 20px rgba(0, 181, 173, 0.4);
+}
+
+.btn-login:hover {
+  transform: scale(1.03);
+  background: linear-gradient(to right, #43cea2, #185a9d);
+  box-shadow: 0 8px 20px rgba(0, 181, 173, 0.4);
+}
+
 .logout-btn:hover {
   transform: scale(1.03);
   background: linear-gradient(to right, #43cea2, #185a9d);
   box-shadow: 0 8px 20px rgba(0, 181, 173, 0.4);
 }
 
-select.input {
-  appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  background-color: #E8F8D8;
-  background-image: url("data:image/svg+xml,%3Csvg fill='black' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.516 7.548L10 12.032l4.484-4.484L15.9 8.966l-5.9 5.9-5.9-5.9z'/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-position: right 1rem center;
-  background-size: 1rem;
-  padding-right: 2.5rem;
-  border: 1px solid #ccc;
-  border-radius: 20px;
-  font-size: 1rem;
-  color: #333;
-  width: 90%;
-  max-width: 288px;
-  margin-bottom: 15px;
-}
-
+/* Button Effects */
 .btn::after {
   content: "";
   position: absolute;
@@ -273,12 +297,14 @@ select.input {
   height: 0.5%;
 }
 
-.btn:hover {
-  background: linear-gradient(to right, #43cea2, #185a9d);
+/* Logo Blocks */
+.login-wrapper .logo {
+  display: block;
+  margin: 0 auto 20px auto;
+  width: 130px !important;
+  height: auto !important;
 }
 
-/* ✅ Ensure logo appears inside login box */
-.login-wrapper .logo,
 .lead-card .logo {
   display: block;
   margin: 0 auto 20px auto;
@@ -286,7 +312,16 @@ select.input {
   height: auto !important;
 }
 
-.login-wrapper,
+/* Wrapper Layout */
+.login-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 20px;
+}
+
 .lead-wrapper {
   display: flex;
   flex-direction: column;
@@ -296,7 +331,21 @@ select.input {
   padding: 20px;
 }
 
-.login-card,
+/* Card Layouts */
+.login-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background: #D0F3C5;
+  padding: 60px 40px;
+  border-radius: 30px;
+  max-width: 500px;
+  width: 150%;
+  margin: 0;
+  padding-top: 40px;
+}
+
 .lead-card {
   display: flex;
   flex-direction: column;
@@ -307,48 +356,45 @@ select.input {
   border-radius: 30px;
   max-width: 500px;
   width: 150%;
-}
-
-@media (max-width: 768px) {
-  .logo {
-    margin-top: 10px;
-  }
-}
-
-/* 🔧 Fix vertical alignment inside both login and lead card */
-.login-wrapper, .lead-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-  padding: 0;
-}
-
-.login-card, .lead-card {
   margin: 0;
   padding-top: 40px;
 }
 
-/* Mobile adjustments */
+/* Media Queries */
 @media (max-width: 768px) {
-  .logo,
-  .lead-card .logo,
+  .logo {
+    margin-top: 10px;
+  }
+
+  .logo {
+    width: 100px !important;
+  }
+
+  .lead-card .logo {
+    width: 100px !important;
+  }
+
   .login-wrapper .logo {
     width: 100px !important;
     margin-top: 10px;
   }
 }
 
-/* Desktop adjustments */
 @media (min-width: 901px) {
-  .logo,
-  .lead-card .logo,
+  .logo {
+    width: 130px !important;
+  }
+
+  .lead-card .logo {
+    width: 130px !important;
+  }
+
   .login-wrapper .logo {
     width: 130px !important;
   }
 }
 
-/* ✅ Final fix for second page OLX logo (lead page) */
+/* OLX Logo Fix */
 .left-side .card .logo {
   display: block;
   margin: 0 auto 20px auto;
