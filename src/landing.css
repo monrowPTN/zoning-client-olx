@@ -285,69 +285,70 @@ body {
   display: block;
 }
 
-/* Responsive Tweaks */
-@media (min-width: 768px) {
-  .header-logo {
-    width: 130px;
-  }
-}
-
-@media (max-width: 767px) {
-  .login-page {
-    padding-top: 60px;
-    padding-bottom: 40px;
-  }
-
-  .header-logo {
-    width: 100px;
-    margin-bottom: 16px;
-  }
-
-  .login-wrapper {
-    margin-top: 40px;
-  }
-
-  .login-wrapper .logo {
-    width: 100px;
-  }
-}
-
-@media (min-width: 901px) {
-  .login-wrapper .logo {
-    width: 130px !important;
-  }
-}
-
-@media (max-width: 600px) {
+@media (max-width: 430px) {
   .card {
-    margin: 0 auto;
-    width: 90%;
-    max-width: 100%;
+    width: 90% !important;
+    max-width: 100% !important;
+    padding: 40px 20px !important;
+    border-radius: 20px;
     box-sizing: border-box;
-    padding: 40px 16px;
+  }
+
+  .login-card {
+    width: 90% !important;
+    max-width: 100% !important;
+    padding: 40px 20px !important;
+    border-radius: 20px;
+    box-sizing: border-box;
+  }
+
+  .lead-card {
+    width: 90% !important;
+    max-width: 100% !important;
+    padding: 40px 20px !important;
+    border-radius: 20px;
+    box-sizing: border-box;
   }
 
   .input {
     width: 100% !important;
     max-width: 100% !important;
-    box-sizing: border-box;
+    font-size: 1rem !important;
   }
 
   .btn {
     width: 100% !important;
     max-width: 100% !important;
-    box-sizing: border-box;
+    font-size: 1rem !important;
   }
 
   .btn-login {
     width: 100% !important;
     max-width: 100% !important;
-    box-sizing: border-box !important;
+    font-size: 1rem !important;
   }
 
   .logout-btn {
     width: 100% !important;
     max-width: 100% !important;
-    box-sizing: border-box !important;
+    font-size: 1rem !important;
+  }
+
+  .submit-btn {
+    width: 100% !important;
+    max-width: 100% !important;
+    font-size: 1rem !important;
+  }
+
+  h1 {
+    font-size: 1.6rem !important;
+  }
+
+  .title {
+    font-size: 1.6rem !important;
+  }
+
+  .subtitle {
+    font-size: 1rem !important;
   }
 }
