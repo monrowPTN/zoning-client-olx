@@ -285,14 +285,14 @@ body {
   display: block;
 }
 
-@media (max-width: 430px) {
-    .card, .login-card, .lead-card {
-        width: 99% !important;
-        max-width: 99% !important;
-        padding: 40px 37px !important;
-        border-radius: 20px;
-        box-sizing: border-box;
-    }
+@media (max-width: 500px) {
+  .card,.login-card,.lead-card {
+      width: 130%!important;
+      max-width: 99%!important;
+      padding: 25px 40px!important;
+      border-radius: 20px;
+      box-sizing: border-box;
+  }
 
   .login-card {
     width: 90% !important;
