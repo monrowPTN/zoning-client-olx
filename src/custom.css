@@ -395,9 +395,15 @@ p {
 }
 
 /* OLX Logo Fix */
-.left-side .card .logo {
+.left-side .logo {
   display: block;
-  margin: 0 auto 20px auto;
-  width: 130px !important;
-  height: auto !important;
+  margin: 2 auto 20px;
+  width: 130px!important;
+  height: auto!important;
+}
+
+.left-side .card {  
+display: block;
+margin: 0 auto 20px auto; /* top | right | bottom | left */
+justify-content: center; /* has no effect on block elements */  
 }
