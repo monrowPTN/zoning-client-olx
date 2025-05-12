@@ -133,7 +133,7 @@ const Signup = ({ onShowLogin }) => {
             textAlign: 'center',
             width: '100%'
           }}>
-              ✅ Signup Successful!<br />Please check your email to confirm.
+              ✅ Signup Successful!<br />Please Check Your Email To Confirm.
           </div>
         )}
 

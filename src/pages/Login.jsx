@@ -76,7 +76,7 @@ const Login = ({ onLoginSuccess, onShowSignup }) => { // ✅ Accept onShowSignup
             }}
             onClick={onShowSignup}
           >
-            Don’t have an account? Sign Up
+            Don’t Have An Account?<br />Sign Up
           </p>
 
           <form className="form" onSubmit={handleLogin}>
