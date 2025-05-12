@@ -377,6 +377,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  background: rgb(211, 222, 206);
 }
   h1 {
     font-size: 1.6rem !important;
