@@ -323,6 +323,35 @@ body {
       box-sizing: border-box
   }
 
+  .signup-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  .signup-card {
+    background: #D0F3C5;
+    padding: 60px 24px;
+    border-radius: 30px;
+    box-shadow: none;
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+    margin: 0 auto;
+  }
+  
+  .signup-card .logo {
+    display: block;
+    margin: 0 auto 20px auto;
+    width: 100px !important;
+    height: auto !important;
+  }
+
   .lead-card {
     width: 90% !important;
     max-width: 100% !important;
