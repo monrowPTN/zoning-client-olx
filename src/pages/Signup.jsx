@@ -130,8 +130,9 @@ const Signup = ({ onShowLogin }) => {
             marginTop: '20px',
             fontWeight: '600',
             textAlign: 'center'
+            width: '100%'
           }}>
-            ✅ Signup successful! Please check your email to confirm.
+              ✅ Signup successful!<br />Please check your email to confirm.
           </div>
         )}
 
@@ -139,7 +140,7 @@ const Signup = ({ onShowLogin }) => {
           style={{ marginTop: '20px', cursor: 'pointer', textDecoration: 'underline' }}
           onClick={onShowLogin}
         >
-          🔙 Back to Login
+          Back to Login
         </p>
       </div>
     </div>

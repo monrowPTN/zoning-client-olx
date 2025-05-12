@@ -356,41 +356,16 @@ body {
   }
 }
 
-  .input {
-    width: 100% !important;
-    max-width: 100% !important;
-    font-size: 1rem !important;
-  }
-
-  .btn {
-    width: 100% !important;
-    max-width: 100% !important;
-    font-size: 1rem !important;
-  }
-
-  .btn-login {
-    width: 100% !important;
-    max-width: 100% !important;
-    font-size: 1rem !important;
-  }
-
-  .logout-btn {
-    width: 100% !important;
-    max-width: 100% !important;
-    font-size: 1rem !important;
-  }
-
-  .submit-btn {
-    width: 100%!important;
-    max-width: 100%!important;
-    font-size: 1rem!important
-  }
-
-  .btn-pin {
-    width: 100%!important;
-    max-width: 100%!important;
-    font-size: 1rem!important
-  }
+.input,
+.btn,
+.btn-login,
+.logout-btn,
+.submit-btn,
+.btn-pin {
+  width: 80% !important;
+  max-width: 100% !important;
+  font-size: 1rem !important;
+}
 
   h1 {
     font-size: 1.6rem !important;
