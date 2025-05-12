@@ -129,7 +129,7 @@ const Signup = ({ onShowLogin }) => {
             borderRadius: '12px',
             marginTop: '20px',
             fontWeight: '600',
-            textAlign: 'center'
+            textAlign: 'center',
             width: '100%'
           }}>
               ✅ Signup successful!<br />Please check your email to confirm.
