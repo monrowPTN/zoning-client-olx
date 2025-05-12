@@ -3,7 +3,7 @@ html {
   margin: 0;
   padding: 0;
   font-family: 'Inter', sans-serif;
-  background: #F7F9FA;
+  background: #D0F3C5;
   height: 100vh;
   width: 100%;
   display: flex;
@@ -286,6 +286,10 @@ body {
 }
 
 @media (max-width: 500px) {
+  html, body {
+    background: #D0F3C5 !important;
+    overflow-x: hidden !important;
+  }
   .page-layout {
     flex-direction: column;
     align-items: center;
