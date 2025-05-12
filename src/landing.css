@@ -390,3 +390,12 @@ body {
   .subtitle {
     font-size: 1rem !important;
   }
+
+  * {
+    box-sizing: border-box;
+    background: #d0f3c5;
+    padding: 20px 10px;
+    margin: .75px;
+    border-radius: 25px; 
+    
+}
