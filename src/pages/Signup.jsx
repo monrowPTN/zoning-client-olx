@@ -58,10 +58,11 @@ const Signup = ({ onShowLogin }) => {
   };
 
   return (
-    <div className="signup-wrapper">
-      <div className="signup-card">
-        <img src="/olx-logo.png" className="logo" alt="OLX Logo" />
-        <h1 className="title">Create Account</h1>
+    <div className="login-page">
+      <div className="signup-wrapper">
+        <div className="signup-card">
+          <img src="/olx-logo.png" className="logo" alt="OLX Logo" />
+          <h1 className="title">Create Account</h1>
 
         <form className="form" onSubmit={handleSignup}>
           <input
@@ -132,7 +133,7 @@ const Signup = ({ onShowLogin }) => {
             textAlign: 'center',
             width: '100%'
           }}>
-              ✅ Signup successful!<br />Please check your email to confirm.
+              ✅ Signup Successful!<br />Please check your email to confirm.
           </div>
         )}
 
@@ -144,6 +145,7 @@ const Signup = ({ onShowLogin }) => {
         </p>
       </div>
     </div>
+  </div>
   );
 };
 
