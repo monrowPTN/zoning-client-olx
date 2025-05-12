@@ -353,23 +353,15 @@ body {
   }
 
   .submit-btn {
-    width: 100% !important;
-    max-width: 100% !important;
-    box-sizing: border-box !important;
-    padding: 14px 28px !important;
-    font-size: 1rem !important;
-    font-weight: bold;
-    border-radius: 30px !important;
+    width: 100%!important;
+    max-width: 100%!important;
+    font-size: 1rem!important
   }
 
   .btn-pin {
-    width: 100% !important;
-    max-width: 100% !important;
-    box-sizing: border-box !important;
-    padding: 14px 28px !important;
-    font-size: 1rem !important;
-    font-weight: bold;
-    border-radius: 30px !important;
+    width: 100%!important;
+    max-width: 100%!important;
+    font-size: 1rem!important
   }
 
   h1 {
