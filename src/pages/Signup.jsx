@@ -59,7 +59,8 @@ const Signup = ({ onShowLogin }) => {
 
   return (
     <div className="signup-wrapper">
-      <div className="signup-card">
+  <div className="signup-card">
+    {/* keep everything inside this div */}
         <img src="/olx-logo.png" className="logo" alt="OLX Logo" />
         <h1 className="title">Create Account</h1>
 
