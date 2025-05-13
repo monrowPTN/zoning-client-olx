@@ -364,8 +364,8 @@ body {
 .logout-btn,
 .submit-btn,
 .btn-pin {
-  width: 80% !important;
-  max-width: 100% !important;
+  width: 100% !important;
+  max-width: 120% !important;
   font-size: 1rem !important;
   margin-bottom: 12px; /* ✅ Add this line to separate it from Submit Lead */
 
