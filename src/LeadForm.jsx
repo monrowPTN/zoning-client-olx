@@ -39,6 +39,10 @@ const LeadForm = ({ onLogout }) => {
     e.preventDefault();
 
     try {
+      // ✅ Step 1: Get authenticated user
+      const { data: { user } } = await supabase.auth.getUser();
+    
+      // ✅ Step 2: Insert lead using user's UUID
       const { data, error } = await supabase.from('leads').insert([
         {
           shop_name: shopName,
@@ -47,7 +51,10 @@ const LeadForm = ({ onLogout }) => {
           zone: zone,
           latitude: latitude,
           longitude: longitude,
-          driver_id: localStorage.getItem('driverID'),
+          // Step 1: Get authenticated user
+
+// Step 2: Use their ID in the insert
+driver_id: user?.id,
         },
       ]);
 
