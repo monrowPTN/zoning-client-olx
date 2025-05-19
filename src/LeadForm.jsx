@@ -51,10 +51,8 @@ const LeadForm = ({ onLogout }) => {
           zone: zone,
           latitude: latitude,
           longitude: longitude,
-          // Step 1: Get authenticated user
-
-// Step 2: Use their ID in the insert
-driver_id: user?.id,
+          driver_id: user?.id, // Use the authenticated user's ID
+          email: user?.email, // using the email to identify the user
         },
       ]);
 
