@@ -102,7 +102,6 @@ const LeadForm = ({ onLogout }) => {
             Logout
           </button>
 
-          /* FULLY CORRECTED DROPDOWNS: CATEGORY + ZONES */
 <form className="form" onSubmit={handleSubmit}>
   <input
     type="text"
