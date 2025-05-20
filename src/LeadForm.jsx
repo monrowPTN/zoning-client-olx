@@ -4,6 +4,7 @@ import './custom.css';
 
 const LeadForm = ({ onLogout }) => {
   const [shopName, setShopName] = useState('');
+  const [category, setCategory] = useState('');
   const [phone, setPhone] = useState('');
   const [address, setAddress] = useState('');
   const [zone, setZone] = useState('');
@@ -12,7 +13,6 @@ const LeadForm = ({ onLogout }) => {
   const [error, setError] = useState('');
   const [loadingLocation, setLoadingLocation] = useState(false);
   const [successMessage, setSuccessMessage] = useState('');
-  const [category, setCategory] = useState('');
 
   const handlePinLocation = () => {
     if (!navigator.geolocation) {
@@ -47,6 +47,7 @@ const LeadForm = ({ onLogout }) => {
       const { data, error } = await supabase.from('leads').insert([
         {
           shop_name: shopName,
+          category: category, // using the category to identify the shop business type
           phone: phone,
           address: address,
           zone: zone,
@@ -54,7 +55,6 @@ const LeadForm = ({ onLogout }) => {
           longitude: longitude,
           driver_id: user?.id, // Use the authenticated user's ID
           email: user?.email, // using the email to identify the user
-          category: category, // using the category to identify the user
         },
       ]);
 
