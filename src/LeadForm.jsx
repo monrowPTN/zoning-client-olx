@@ -12,6 +12,7 @@ const LeadForm = ({ onLogout }) => {
   const [error, setError] = useState('');
   const [loadingLocation, setLoadingLocation] = useState(false);
   const [successMessage, setSuccessMessage] = useState('');
+  const [category, setCategory] = useState('');
 
   const handlePinLocation = () => {
     if (!navigator.geolocation) {
@@ -53,6 +54,7 @@ const LeadForm = ({ onLogout }) => {
           longitude: longitude,
           driver_id: user?.id, // Use the authenticated user's ID
           email: user?.email, // using the email to identify the user
+          category: category, // using the category to identify the user
         },
       ]);
 
@@ -73,6 +75,7 @@ const LeadForm = ({ onLogout }) => {
         setZone('');
         setLatitude('');
         setLongitude('');
+        setCategory('');
       }, 3000);
     } catch (err) {
       console.error('❌ Unexpected error:', err);
@@ -134,6 +137,20 @@ const LeadForm = ({ onLogout }) => {
               required
               aria-label="Select Zone"
             >
+
+            <select
+              className="input"
+              value={category}
+              onChange={(e) => setCategory(e.target.value)}
+              required
+              aria-label="Select Category"
+            >
+
+              <option value="">Select Category</option>
+              <option value="Properties">Properties</option>
+              <option value="Autos">Autos</option>
+              <option value="Goods">Goods</option>
+            </select>
               <option value="">Select Zone</option>
               <optgroup label="Beirut">
                 <option value="Achrafieh">Achrafieh</option>
