@@ -102,177 +102,180 @@ const LeadForm = ({ onLogout }) => {
             Logout
           </button>
 
-          <form className="form" onSubmit={handleSubmit}>
-            <input
-              type="text"
-              placeholder="🏪 Shop Name"
-              value={shopName}
-              onChange={(e) => setShopName(e.target.value)}
-              className="input input-shop"
-              required
-              aria-label="Shop Name"
-            />
-            <input
-              type="tel"
-              placeholder="📞 Phone Number"
-              value={phone}
-              onChange={(e) => setPhone(e.target.value)}
-              className="input input-phone"
-              required
-              aria-label="Phone Number"
-            />
-            <input
-              type="text"
-              placeholder="📍 Address"
-              value={address}
-              onChange={(e) => setAddress(e.target.value)}
-              className="input input-address"
-              required
-              aria-label="Address"
-            />
-            <select
-              className="input input-zone"
-              value={zone}
-              onChange={(e) => setZone(e.target.value)}
-              required
-              aria-label="Select Zone"
-            >
+          /* FULLY CORRECTED DROPDOWNS: CATEGORY + ZONES */
+<form className="form" onSubmit={handleSubmit}>
+  <input
+    type="text"
+    placeholder="🏪 Shop Name"
+    value={shopName}
+    onChange={(e) => setShopName(e.target.value)}
+    className="input input-shop"
+    required
+    aria-label="Shop Name"
+  />
 
-            <select
-              className="input input-category"
-              value={category}
-              onChange={(e) => setCategory(e.target.value)}
-              required
-              aria-label="Select Category"
-            >
-              <option value="">Select Category</option>
-              <option value="Properties">Properties</option>
-              <option value="Autos">Autos</option>
-              <option value="Goods">Goods</option>
-            </select>
-            {/* ✅ Zone Dropdown */}
-            <select
-              className="input input-zone"
-              value={zone}
-              onChange={(e) => setZone(e.target.value)}
-              required
-              aria-label="Select Zone"
-            >
-              
-              <option value="">Select Zone</option>
-              <optgroup label="Beirut">
-                <option value="Achrafieh">Achrafieh</option>
-                <option value="Ain El Mreisseh">Ain El Mreisseh</option>
-                <option value="Badaro">Badaro</option>
-                <option value="Barbir">Barbir</option>
-                <option value="Basta">Basta</option>
-                <option value="Basta Al Tahta">Basta Al Tahta</option>
-                <option value="Bachoura">Bachoura</option>
-                <option value="Bourj Abu Haidar">Bourj Abu Haidar</option>
-                <option value="Corniche El Mazraa">Corniche El Mazraa</option>
-                <option value="Downtown Beirut">Downtown Beirut</option>
-                <option value="Gemmayze">Gemmayze</option>
-                <option value="Hamra">Hamra</option>
-                <option value="Karantina">Karantina</option>
-                <option value="Kaskas">Kaskas</option>
-                <option value="Manara">Manara</option>
-                <option value="Mar Mikhael">Mar Mikhael</option>
-                <option value="Mazraa">Mazraa</option>
-                <option value="Minet El Hosn">Minet El Hosn</option>
-                <option value="Ras Beirut">Ras Beirut</option>
-                <option value="Sodeco">Sodeco</option>
-                <option value="Spears">Spears</option>
-                <option value="Tallet El Khayat">Tallet El Khayat</option>
-                <option value="Verdun">Verdun</option>
-                <option value="Wata El Msaytbeh">Wata El Msaytbeh</option>
-                <option value="Zokak El Blatt">Zokak El Blatt</option>
-              </optgroup>
-              <optgroup label="Mount Lebanon">
-                <option value="Ain Anoub">Ain Anoub</option>
-                <option value="Aintoura">Aintoura</option>
-                <option value="Aley">Aley</option>
-                <option value="Antelias">Antelias</option>
-                <option value="Aramoun">Aramoun</option>
-                <option value="Baabda">Baabda</option>
-                <option value="Ballouneh">Ballouneh</option>
-                <option value="Barouk">Barouk</option>
-                <option value="Bchamoun">Bchamoun</option>
-                <option value="Beit Mery">Beit Mery</option>
-                <option value="Bhamdoun">Bhamdoun</option>
-                <option value="Bikfaya">Bikfaya</option>
-                <option value="Bsaba">Bsaba</option>
-                <option value="Broummana">Broummana</option>
-                <option value="Bsalim">Bsalim</option>
-                <option value="Choueifat">Choueifat</option>
-                <option value="Damour">Damour</option>
-                <option value="Dbayeh">Dbayeh</option>
-                <option value="Dekwaneh">Dekwaneh</option>
-                <option value="Deir El Qamar">Deir El Qamar</option>
-                <option value="Dora">Dora</option>
-                <option value="Faraya">Faraya</option>
-                <option value="Fanar">Fanar</option>
-                <option value="Ghosta">Ghosta</option>
-                <option value="Hadath">Hadath</option>
-                <option value="Harissa">Harissa</option>
-                <option value="Hazmieh">Hazmieh</option>
-                <option value="Jal El Dib">Jal El Dib</option>
-                <option value="Jeita">Jeita</option>
-                <option value="Jdeideh">Jdeideh</option>
-                <option value="Jounieh">Jounieh</option>
-                <option value="Kahale">Kahale</option>
-                <option value="Kfarchima">Kfarchima</option>
-                <option value="Kfardebian">Kfardebian</option>
-                <option value="Khalde">Khalde</option>
-                <option value="Mansourieh">Mansourieh</option>
-                <option value="Mazraat Yachouh">Mazraat Yachouh</option>
-                <option value="Mtein">Mtein</option>
-                <option value="Mtayleb">Mtayleb</option>
-                <option value="Rabieh">Rabieh</option>
-                <option value="Rayfoun">Rayfoun</option>
-                <option value="Saoufar">Saoufar</option>
-                <option value="Sarba">Sarba</option>
-                <option value="Sin El Fil">Sin El Fil</option>
-                <option value="Souk El Gharb">Souk El Gharb</option>
-                <option value="Zalka">Zalka</option>
-                <option value="Zouk Mikael">Zouk Mikael</option>
-                <option value="Zouk Mosbeh">Zouk Mosbeh</option>
-              </optgroup>
-              <optgroup label="North Lebanon">
-                <option value="Akkar">Akkar</option>
-                <option value="Amioun">Amioun</option>
-                <option value="Anfeh">Anfeh</option>
-                <option value="Batroun">Batroun</option>
-                <option value="Bcharre">Bcharre</option>
-                <option value="Chekka">Chekka</option>
-                <option value="Ehden">Ehden</option>
-                <option value="Halba">Halba</option>
-                <option value="Koura">Koura</option>
-                <option value="Miniyeh">Miniyeh</option>
-                <option value="Mina">Mina</option>
-                <option value="Sir El Dinnieh">Sir El Dinnieh</option>
-                <option value="Tripoli">Tripoli</option>
-                <option value="Zgharta">Zgharta</option>
-              </optgroup>
-              <optgroup label="South Lebanon">
-                <option value="Bint Jbeil">Bint Jbeil</option>
-                <option value="Jezzine">Jezzine</option>
-                <option value="Marjayoun">Marjayoun</option>
-                <option value="Nabatieh">Nabatieh</option>
-                <option value="Qana">Qana</option>
-                <option value="Saida">Saida (Sidon)</option>
-                <option value="Sour">Sour (Tyre)</option>
-              </optgroup>
-              <optgroup label="Bekaa">
-                <option value="Anjar">Anjar</option>
-                <option value="Baalbek">Baalbek</option>
-                <option value="Chtaura">Chtaura</option>
-                <option value="Hermel">Hermel</option>
-                <option value="Jdeideh Ferzol">Jdeideh Ferzol</option>
-                <option value="Rachaya">Rachaya</option>
-                <option value="Taanayel">Taanayel</option>
-                <option value="Zahle">Zahle</option>
-              </optgroup>
-            </select>
+  <input
+    type="tel"
+    placeholder="📞 Phone Number"
+    value={phone}
+    onChange={(e) => setPhone(e.target.value)}
+    className="input input-phone"
+    required
+    aria-label="Phone Number"
+  />
+
+  <input
+    type="text"
+    placeholder="📍 Address"
+    value={address}
+    onChange={(e) => setAddress(e.target.value)}
+    className="input input-address"
+    required
+    aria-label="Address"
+  />
+
+  {/* CATEGORY DROPDOWN */}
+  <select
+    className="input input-category"
+    value={category}
+    onChange={(e) => setCategory(e.target.value)}
+    required
+    aria-label="Select Category"
+  >
+    <option value="">Select Category</option>
+    <option value="Properties">Properties</option>
+    <option value="Autos">Autos</option>
+    <option value="Goods">Goods</option>
+  </select>
+
+  {/* ZONE DROPDOWN */}
+  <select
+    className="input input-zone"
+    value={zone}
+    onChange={(e) => setZone(e.target.value)}
+    required
+    aria-label="Select Zone"
+  >
+    <option value="">Select Zone</option>
+
+    <optgroup label="Beirut">
+      <option value="Achrafieh">Achrafieh</option>
+      <option value="Ain El Mreisseh">Ain El Mreisseh</option>
+      <option value="Badaro">Badaro</option>
+      <option value="Barbir">Barbir</option>
+      <option value="Basta">Basta</option>
+      <option value="Basta Al Tahta">Basta Al Tahta</option>
+      <option value="Bachoura">Bachoura</option>
+      <option value="Bourj Abu Haidar">Bourj Abu Haidar</option>
+      <option value="Corniche El Mazraa">Corniche El Mazraa</option>
+      <option value="Downtown Beirut">Downtown Beirut</option>
+      <option value="Gemmayze">Gemmayze</option>
+      <option value="Hamra">Hamra</option>
+      <option value="Karantina">Karantina</option>
+      <option value="Kaskas">Kaskas</option>
+      <option value="Manara">Manara</option>
+      <option value="Mar Mikhael">Mar Mikhael</option>
+      <option value="Mazraa">Mazraa</option>
+      <option value="Minet El Hosn">Minet El Hosn</option>
+      <option value="Ras Beirut">Ras Beirut</option>
+      <option value="Sodeco">Sodeco</option>
+      <option value="Spears">Spears</option>
+      <option value="Tallet El Khayat">Tallet El Khayat</option>
+      <option value="Verdun">Verdun</option>
+      <option value="Wata El Msaytbeh">Wata El Msaytbeh</option>
+      <option value="Zokak El Blatt">Zokak El Blatt</option>
+    </optgroup>
+
+    <optgroup label="Mount Lebanon">
+      <option value="Ain Anoub">Ain Anoub</option>
+      <option value="Aintoura">Aintoura</option>
+      <option value="Aley">Aley</option>
+      <option value="Antelias">Antelias</option>
+      <option value="Aramoun">Aramoun</option>
+      <option value="Baabda">Baabda</option>
+      <option value="Ballouneh">Ballouneh</option>
+      <option value="Barouk">Barouk</option>
+      <option value="Bchamoun">Bchamoun</option>
+      <option value="Beit Mery">Beit Mery</option>
+      <option value="Bhamdoun">Bhamdoun</option>
+      <option value="Bikfaya">Bikfaya</option>
+      <option value="Bsaba">Bsaba</option>
+      <option value="Broummana">Broummana</option>
+      <option value="Bsalim">Bsalim</option>
+      <option value="Choueifat">Choueifat</option>
+      <option value="Damour">Damour</option>
+      <option value="Dbayeh">Dbayeh</option>
+      <option value="Dekwaneh">Dekwaneh</option>
+      <option value="Deir El Qamar">Deir El Qamar</option>
+      <option value="Dora">Dora</option>
+      <option value="Faraya">Faraya</option>
+      <option value="Fanar">Fanar</option>
+      <option value="Ghosta">Ghosta</option>
+      <option value="Hadath">Hadath</option>
+      <option value="Harissa">Harissa</option>
+      <option value="Hazmieh">Hazmieh</option>
+      <option value="Jal El Dib">Jal El Dib</option>
+      <option value="Jeita">Jeita</option>
+      <option value="Jdeideh">Jdeideh</option>
+      <option value="Jounieh">Jounieh</option>
+      <option value="Kahale">Kahale</option>
+      <option value="Kfarchima">Kfarchima</option>
+      <option value="Kfardebian">Kfardebian</option>
+      <option value="Khalde">Khalde</option>
+      <option value="Mansourieh">Mansourieh</option>
+      <option value="Mazraat Yachouh">Mazraat Yachouh</option>
+      <option value="Mtein">Mtein</option>
+      <option value="Mtayleb">Mtayleb</option>
+      <option value="Rabieh">Rabieh</option>
+      <option value="Rayfoun">Rayfoun</option>
+      <option value="Saoufar">Saoufar</option>
+      <option value="Sarba">Sarba</option>
+      <option value="Sin El Fil">Sin El Fil</option>
+      <option value="Souk El Gharb">Souk El Gharb</option>
+      <option value="Zalka">Zalka</option>
+      <option value="Zouk Mikael">Zouk Mikael</option>
+      <option value="Zouk Mosbeh">Zouk Mosbeh</option>
+    </optgroup>
+
+    <optgroup label="North Lebanon">
+      <option value="Akkar">Akkar</option>
+      <option value="Amioun">Amioun</option>
+      <option value="Anfeh">Anfeh</option>
+      <option value="Batroun">Batroun</option>
+      <option value="Bcharre">Bcharre</option>
+      <option value="Chekka">Chekka</option>
+      <option value="Ehden">Ehden</option>
+      <option value="Halba">Halba</option>
+      <option value="Koura">Koura</option>
+      <option value="Miniyeh">Miniyeh</option>
+      <option value="Mina">Mina</option>
+      <option value="Sir El Dinnieh">Sir El Dinnieh</option>
+      <option value="Tripoli">Tripoli</option>
+      <option value="Zgharta">Zgharta</option>
+    </optgroup>
+
+    <optgroup label="South Lebanon">
+      <option value="Bint Jbeil">Bint Jbeil</option>
+      <option value="Jezzine">Jezzine</option>
+      <option value="Marjayoun">Marjayoun</option>
+      <option value="Nabatieh">Nabatieh</option>
+      <option value="Qana">Qana</option>
+      <option value="Saida">Saida (Sidon)</option>
+      <option value="Sour">Sour (Tyre)</option>
+    </optgroup>
+
+    <optgroup label="Bekaa">
+      <option value="Anjar">Anjar</option>
+      <option value="Baalbek">Baalbek</option>
+      <option value="Chtaura">Chtaura</option>
+      <option value="Hermel">Hermel</option>
+      <option value="Jdeideh Ferzol">Jdeideh Ferzol</option>
+      <option value="Rachaya">Rachaya</option>
+      <option value="Taanayel">Taanayel</option>
+      <option value="Zahle">Zahle</option>
+    </optgroup>
+  </select>
+
 
             <button
               type="button"
