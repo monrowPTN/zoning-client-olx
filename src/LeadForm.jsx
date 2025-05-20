@@ -139,17 +139,17 @@ const LeadForm = ({ onLogout }) => {
             >
 
             <select
-              className="input"
+              className="input input-category"
               value={category}
               onChange={(e) => setCategory(e.target.value)}
               required
               aria-label="Select Category"
             >
-
               <option value="">Select Category</option>
               <option value="Properties">Properties</option>
               <option value="Autos">Autos</option>
               <option value="Goods">Goods</option>
+            
             </select>
               <option value="">Select Zone</option>
               <optgroup label="Beirut">
