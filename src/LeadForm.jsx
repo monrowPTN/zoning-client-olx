@@ -149,8 +149,16 @@ const LeadForm = ({ onLogout }) => {
               <option value="Properties">Properties</option>
               <option value="Autos">Autos</option>
               <option value="Goods">Goods</option>
-            
             </select>
+            {/* ✅ Zone Dropdown */}
+            <select
+              className="input input-zone"
+              value={zone}
+              onChange={(e) => setZone(e.target.value)}
+              required
+              aria-label="Select Zone"
+            >
+              
               <option value="">Select Zone</option>
               <optgroup label="Beirut">
                 <option value="Achrafieh">Achrafieh</option>
