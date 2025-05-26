@@ -165,6 +165,7 @@ const LeadForm = ({ onLogout }) => {
       <option value="Basta">Basta</option>
       <option value="Basta Al Tahta">Basta Al Tahta</option>
       <option value="Bachoura">Bachoura</option>
+      <option value="Beirut">Beirut</option>
       <option value="Bourj Abu Haidar">Bourj Abu Haidar</option>
       <option value="Corniche El Mazraa">Corniche El Mazraa</option>
       <option value="Downtown Beirut">Downtown Beirut</option>
