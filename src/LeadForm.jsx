@@ -178,6 +178,8 @@ const LeadForm = ({ onLogout }) => {
       <option value="Mazraa">Mazraa</option>
       <option value="Minet El Hosn">Minet El Hosn</option>
       <option value="Ras Beirut">Ras Beirut</option>
+      <option value="Sayfi">Sayfi</option>
+      <option value="Saeb Salam">Saeb Salam</option>
       <option value="Sodeco">Sodeco</option>
       <option value="Spears">Spears</option>
       <option value="Tallet El Khayat">Tallet El Khayat</option>
