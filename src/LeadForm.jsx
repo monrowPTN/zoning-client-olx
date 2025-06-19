@@ -142,21 +142,23 @@ const LeadForm = ({ onLogout }) => {
   aria-label="Select Category"
 >
   <option value="">Select Category</option>
+  
   <option value="Properties">Properties</option>
+
   <option value="Autos">Autos</option>
 
   <optgroup label="Goods">
-    <option value="Goods - Mobiles & Accessories">Mobiles & Accessories</option>
-    <option value="Goods - Electronics & Appliances">Electronics & Appliances</option>
-    <option value="Goods - Furniture & Decor">Furniture & Decor</option>
-    <option value="Goods - Businesses & Industrial">Businesses & Industrial</option>
-    <option value="Goods - Pets">Pets</option>
-    <option value="Goods - Kids & Babies">Kids & Babies</option>
-    <option value="Goods - Sports & Equipment">Sports & Equipment</option>
-    <option value="Goods - Hobbies-Antiques">Hobbies-Antiques</option>
-    <option value="Goods - Jobs">Jobs</option>
-    <option value="Goods - Fashion & Beauty">Fashion & Beauty</option>
-    <option value="Goods - Services Repairs">Services Repairs</option>
+    <option value="Mobiles & Accessories - Goods">Mobiles & Accessories</option>
+    <option value="Electronics & Appliances - Goods">Electronics & Appliances</option>
+    <option value="Furniture & Decor - Goods">Furniture & Decor</option>
+    <option value="Businesses & Industrial - Goods">Businesses & Industrial</option>
+    <option value="Pets - Goods">Pets</option>
+    <option value="Kids & Babies - Goods">Kids & Babies</option>
+    <option value="Sports & Equipment - Goods">Sports & Equipment</option>
+    <option value="Hobbies-Antiques - Goods">Hobbies-Antiques</option>
+    <option value="Jobs - Goods">Jobs</option>
+    <option value="Services Repairs - Goods">Services Repairs</option>
+    <option value="Fashion & Beauty - Goods">Fashion & Beauty</option>
   </optgroup>
 </select>
 
