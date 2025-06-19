@@ -146,17 +146,17 @@ const LeadForm = ({ onLogout }) => {
   <option value="Autos">Autos</option>
 
   <optgroup label="Goods">
-    <option value="Mobiles & Accessories">Mobiles & Accessories</option>
-    <option value="Electronics & Appliances">Electronics & Appliances</option>
-    <option value="Furniture & Decor">Furniture & Decor</option>
-    <option value="Businesses & Industrial">Businesses & Industrial</option>
-    <option value="Pets">Pets</option>
-    <option value="Kids & Babies">Kids & Babies</option>
-    <option value="Sports & Equipment">Sports & Equipment</option>
-    <option value="Hobbies-Antiques">Hobbies-Antiques</option>
-    <option value="Jobs">Jobs</option>
-    <option value="Fashion & Beauty">Fashion & Beauty</option>
-    <option value="Services Repairs">Services Repairs</option>
+    <option value="Goods - Mobiles & Accessories">Mobiles & Accessories</option>
+    <option value="Goods - Electronics & Appliances">Electronics & Appliances</option>
+    <option value="Goods - Furniture & Decor">Furniture & Decor</option>
+    <option value="Goods - Businesses & Industrial">Businesses & Industrial</option>
+    <option value="Goods - Pets">Pets</option>
+    <option value="Goods - Kids & Babies">Kids & Babies</option>
+    <option value="Goods - Sports & Equipment">Sports & Equipment</option>
+    <option value="Goods - Hobbies-Antiques">Hobbies-Antiques</option>
+    <option value="Goods - Jobs">Jobs</option>
+    <option value="Goods - Fashion & Beauty">Fashion & Beauty</option>
+    <option value="Goods - Services Repairs">Services Repairs</option>
   </optgroup>
 </select>
 
