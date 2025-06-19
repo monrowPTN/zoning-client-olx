@@ -134,18 +134,31 @@ const LeadForm = ({ onLogout }) => {
   />
 
   {/* CATEGORY DROPDOWN */}
-  <select
-    className="input input-category"
-    value={category}
-    onChange={(e) => setCategory(e.target.value)}
-    required
-    aria-label="Select Category"
-  >
-    <option value="">Select Category</option>
-    <option value="Properties">Properties</option>
-    <option value="Autos">Autos</option>
-    <option value="Goods">Goods</option>
-  </select>
+<select
+  className="input input-category"
+  value={category}
+  onChange={(e) => setCategory(e.target.value)}
+  required
+  aria-label="Select Category"
+>
+  <option value="">Select Category</option>
+  <option value="Properties">Properties</option>
+  <option value="Autos">Autos</option>
+
+  <optgroup label="Goods">
+    <option value="Mobiles & Accessories">Mobiles & Accessories</option>
+    <option value="Electronics & Appliances">Electronics & Appliances</option>
+    <option value="Furniture & Decor">Furniture & Decor</option>
+    <option value="Businesses & Industrial">Businesses & Industrial</option>
+    <option value="Pets">Pets</option>
+    <option value="Kids & Babies">Kids & Babies</option>
+    <option value="Sports & Equipment">Sports & Equipment</option>
+    <option value="Hobbies-Antiques">Hobbies-Antiques</option>
+    <option value="Jobs">Jobs</option>
+    <option value="Fashion & Beauty">Fashion & Beauty</option>
+    <option value="Services Repairs">Services Repairs</option>
+  </optgroup>
+</select>
 
   {/* ZONE DROPDOWN */}
   <select
@@ -171,6 +184,7 @@ const LeadForm = ({ onLogout }) => {
       <option value="Downtown Beirut">Downtown Beirut</option>
       <option value="Gemmayze">Gemmayze</option>
       <option value="Hamra">Hamra</option>
+      <option value="Jisr El Wati">Jisr El Wati</option>
       <option value="Jnah">Jnah</option>
       <option value="Karantina">Karantina</option>
       <option value="Kaskas">Kaskas</option>
